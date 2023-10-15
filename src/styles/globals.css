@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* TODO: improve the solution below that removes white space under the footer */
+  html,
+  body,
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    height: 100%;
+  }
+
+  :root {
+    --base-color: #222222;
+    --text-color: #f7f7f7;
+    --header-color: #000000;
+    --primary-color: #4598e6;
+
+    --header-height: 64px;
+  }
+
+  /* for markdown */
+  .markdown {
+    @apply text-sm leading-relaxed;
+  }
+
+  .markdown > .toc {
+    @apply bg-gray-800;
+  }
+
+  @screen sm {
+    .markdown {
+      @apply text-base;
+    }
+  }
+
+  @screen lg {
+    .markdown {
+      @apply text-lg;
+    }
+  }
+
+  /* Headers */
+  .markdown h1,
+  .markdown h2 {
+    @apply my-6 text-xl font-semibold;
+  }
+  .markdown h3,
+  .markdown h4,
+  .markdown h5,
+  .markdown h6 {
+    @apply my-3 text-lg font-semibold;
+  }
+
+  @screen sm {
+    .markdown h1,
+    .markdown h2 {
+      @apply text-2xl;
+    }
+    .markdown h3,
+    .markdown h4,
+    .markdown h5,
+    .markdown h6 {
+      @apply text-xl;
+    }
+  }
+
+  /* Links */
+  .markdown a {
+    @apply text-blue-600;
+  }
+  .markdown a:hover {
+    @apply underline;
+  }
+  /* Paragraph */
+  .markdown p {
+    @apply mb-4;
+  }
+  /* Lists */
+  .markdown ul,
+  .markdown ol {
+    @apply mb-4 ml-8;
+  }
+  .markdown li > p,
+  .markdown li > ul,
+  .markdown li > ol {
+    @apply mb-0;
+  }
+  .markdown ol {
+    @apply list-decimal;
+  }
+  .markdown ul {
+    @apply list-disc;
+  }
+  /* Blockquotes */
+  .markdown blockquote {
+    @apply mb-4 border-l-4 border-gray-700 bg-gray-600 p-2 italic;
+  }
+  .markdown blockquote > p {
+    @apply mb-0;
+  }
+  /* Tables */
+  .markdown td,
+  .markdown th {
+    @apply border border-gray-400 px-2 py-1;
+  }
+  .markdown tr:nth-child(odd) {
+    @apply bg-gray-100;
+  }
+  .markdown table {
+    @apply mb-6;
+  }
+
+  .markdown :not(pre) > code.language-text {
+    white-space: pre-line;
+  }
+}
