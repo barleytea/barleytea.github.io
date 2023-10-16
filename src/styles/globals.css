@@ -22,7 +22,7 @@
 
   /* for markdown */
   .markdown {
-    @apply text-sm leading-relaxed;
+    @apply text-sm leading-relaxed text-[color:var(--text-color)];
   }
 
   .markdown > .toc {

@@ -2,6 +2,7 @@ import { PageProps, graphql } from 'gatsby'
 import { DetailPageContext } from '../../gatsby-node'
 import { Layout } from '../components/layout'
 import { MainColumn } from '../components/main-clumn'
+import { ContentsHeader } from '../components/contents-header'
 
 const RootBlogList = ({
   data,
@@ -16,6 +17,9 @@ const RootBlogList = ({
   return (
     <Layout>
       <div className="grid gap-y-6">
+        <ContentsHeader
+          markdownMeta={data.markdownRemark.frontmatter}
+        ></ContentsHeader>
         <div className="grid gap-x-6">
           <MainColumn detailPage={data.markdownRemark} />
         </div>
@@ -36,6 +40,11 @@ export const details = graphql`
         path
         title
         created
+        eyecatcher {
+          childImageSharp {
+            gatsbyImageData(width: 300, height: 300, placeholder: BLURRED)
+          }
+        }
       }
     }
   }

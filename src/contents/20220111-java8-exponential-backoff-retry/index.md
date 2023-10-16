@@ -2,9 +2,11 @@
 title: "Java8 で Exponential Backoff な retry を実装してみる"
 created: "2022-01-11"
 path: "/java8-exponential-backoff-retry"
+eyecatcher: "./eyecatcher.png"
 ---
 
-# Java8 で Exponential Backoff な retry を実装してみる
+```toc
+```
 
 ## TL; DR
 

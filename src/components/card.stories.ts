@@ -22,6 +22,16 @@ export const Normal: Story = {
         title: 'Sample さんぷる サンプル 見本',
         created: '2023-10-02',
         path: 'sample001',
+        eyecatcher: {
+          childImageSharp: {
+            gatsbyImageData: {
+              width: 1,
+              height: 3,
+              layout: 'constrained',
+              images: {},
+            },
+          },
+        },
       },
     },
   },
