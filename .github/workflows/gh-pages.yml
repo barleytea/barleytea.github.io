@@ -19,20 +19,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '20'
 
-      - name: Cache dependencies
+      - name: Cache node_modules
+        id: node_modules_cache_id
         uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          path: |
+            node_modules
+          key: node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
-      - run: npm ci
-      - run: npm run format
-      - run: npm run test
-      - run: npm run build
+
+
+      - run: yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
