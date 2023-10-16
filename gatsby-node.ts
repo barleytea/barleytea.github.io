@@ -36,6 +36,11 @@ const detailPage = async (
               created,
               title,
               path,
+              eyecatcher {
+                childImageSharp {
+                  gatsbyImageData(width: 120, height: 90)
+                }
+              },
             }
           },
           previous {
@@ -43,6 +48,11 @@ const detailPage = async (
               created,
               title,
               path,
+              eyecatcher {
+                childImageSharp {
+                  gatsbyImageData(width: 120, height: 90)
+                }
+              },
             }
           },
           node {
@@ -50,7 +60,12 @@ const detailPage = async (
               created,
               title,
               path,
-            }
+              eyecatcher {
+                childImageSharp {
+                  gatsbyImageData(width: 120, height: 90)
+                }
+              },
+            },
             id
           }
         }
@@ -96,6 +111,11 @@ const pagination = async (
             title
             path
             created
+            eyecatcher {
+              childImageSharp {
+                gatsbyImageData(width: 120, height: 90)
+              }
+            }
           }
           id
         }

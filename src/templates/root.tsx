@@ -41,6 +41,11 @@ export const postsPagination = graphql`
           path
           title
           created
+          eyecatcher {
+            childImageSharp {
+              gatsbyImageData(width: 296, height: 296, placeholder: BLURRED)
+            }
+          }
         }
       }
     }
