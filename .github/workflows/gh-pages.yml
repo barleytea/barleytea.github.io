@@ -14,6 +14,10 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
+      - name: GitHub Config
+        run: |
+          git config --global user.email "barleytea362@gmail.com"
+          git config --global user.name "barleytea"
       - uses: actions/checkout@v3
 
       - name: Setup Node
