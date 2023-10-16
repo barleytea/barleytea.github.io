@@ -3,4 +3,3 @@ node_modules/
 public
 src/gatsby-types.d.ts
 storybook-static
-yarn.lock
