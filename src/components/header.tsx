@@ -11,8 +11,8 @@ export const Header: ComponentType = () => {
           </Link>
         </div>
         <div className="flex">
-          <Link to="/bio" className="mr-1 text-[color:var(--text-color)]">
-            Bio
+          <Link to="/about-me" className="mr-2 text-[color:var(--text-color)]">
+            About Me
           </Link>
         </div>
       </div>
