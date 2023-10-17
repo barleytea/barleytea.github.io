@@ -29,7 +29,10 @@ const detailPage = async (
 ) => {
   const nextAndPreviousResult = await graphql<Queries.nextAndPreviousQuery>(`
     query nextAndPrevious {
-      allMarkdownRemark(sort: { frontmatter: { created: DESC } }) {
+      allMarkdownRemark(
+        sort: { frontmatter: { created: DESC } }
+        filter: { frontmatter: { path: { ne: "/about-me" } } }
+      ) {
         edges {
           next {
             frontmatter {
@@ -104,6 +107,7 @@ const pagination = async (
     query pagination {
       allMarkdownRemark(
         sort: { frontmatter: { created: DESC } }
+        filter: { frontmatter: { path: { ne: "/about-me" } } }
         limit: 1000
       ) {
         nodes {
