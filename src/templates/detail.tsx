@@ -3,6 +3,7 @@ import { DetailPageContext } from '../../gatsby-node'
 import { Layout } from '../components/layout'
 import { MainColumn } from '../components/main-clumn'
 import { ContentsHeader } from '../components/contents-header'
+import { NextAndPrevious } from '../components/next-previous'
 
 const RootBlogList = ({
   data,
@@ -22,6 +23,9 @@ const RootBlogList = ({
         ></ContentsHeader>
         <div className="grid gap-x-6">
           <MainColumn detailPage={data.markdownRemark} />
+          <section className="mt-4">
+            <NextAndPrevious next={pageContext.next} prev={pageContext.prev} />
+          </section>
         </div>
       </div>
     </Layout>
