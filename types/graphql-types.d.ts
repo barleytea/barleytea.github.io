@@ -704,6 +704,7 @@ export type MarkdownRemarkFrontmatter = {
   created?: Maybe<Scalars['Date']>;
   path?: Maybe<Scalars['String']>;
   eyecatcher?: Maybe<File>;
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 
@@ -1182,6 +1183,7 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   created?: InputMaybe<DateQueryOperatorInput>;
   path?: InputMaybe<StringQueryOperatorInput>;
   eyecatcher?: InputMaybe<FileFilterInput>;
+  tags?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type FileFilterInput = {
@@ -1454,6 +1456,7 @@ export type MarkdownRemarkFrontmatterFieldSelector = {
   created?: InputMaybe<FieldSelectorEnum>;
   path?: InputMaybe<FieldSelectorEnum>;
   eyecatcher?: InputMaybe<FileFieldSelector>;
+  tags?: InputMaybe<FieldSelectorEnum>;
 };
 
 export type MarkdownHeadingFieldSelector = {
@@ -1655,6 +1658,7 @@ export type MarkdownRemarkFrontmatterSortInput = {
   created?: InputMaybe<SortOrderEnum>;
   path?: InputMaybe<SortOrderEnum>;
   eyecatcher?: InputMaybe<FileSortInput>;
+  tags?: InputMaybe<SortOrderEnum>;
 };
 
 export type MarkdownHeadingSortInput = {
@@ -2832,7 +2836,7 @@ export type DetailPageQueryVariables = Exact<{
 }>;
 
 
-export type DetailPageQuery = { markdownRemark?: { excerpt?: string | null, id: string, html?: string | null, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null };
+export type DetailPageQuery = { markdownRemark?: { excerpt?: string | null, id: string, html?: string | null, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null };
 
 export type PostsPaginationQueryVariables = Exact<{
   skip: Scalars['Int'];
@@ -2840,7 +2844,7 @@ export type PostsPaginationQueryVariables = Exact<{
 }>;
 
 
-export type PostsPaginationQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+export type PostsPaginationQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 

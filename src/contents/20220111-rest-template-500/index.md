@@ -3,6 +3,7 @@ title: "Spring Boot の RestTemplate で 500 系エラーが発生した場合�
 created: "2022-01-11"
 path: "/rest-template-500"
 eyecatcher: "./eyecatcher.png"
+tags: ["Java"]
 ---
 
 ```toc

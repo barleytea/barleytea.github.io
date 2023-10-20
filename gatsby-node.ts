@@ -19,6 +19,7 @@ export interface DetailPageContext {
   next: NextEdge;
   prev: PrevEdge;
   id: string;
+  tags: string[];
 }
 
 const detailPage = async (
@@ -36,39 +37,42 @@ const detailPage = async (
         edges {
           next {
             frontmatter {
-              created,
-              title,
-              path,
+              created
+              title
+              path
+              tags
               eyecatcher {
                 childImageSharp {
                   gatsbyImageData(width: 120, height: 90)
                 }
-              },
+              }
             }
-          },
+          }
           previous {
             frontmatter {
-              created,
-              title,
-              path,
+              created
+              title
+              path
+              tags
               eyecatcher {
                 childImageSharp {
                   gatsbyImageData(width: 120, height: 90)
                 }
-              },
+              }
             }
-          },
+          }
           node {
             frontmatter {
-              created,
-              title,
-              path,
+              created
+              title
+              path
+              tags
               eyecatcher {
                 childImageSharp {
                   gatsbyImageData(width: 120, height: 90)
                 }
-              },
-            },
+              }
+            }
             id
           }
         }
@@ -81,15 +85,17 @@ const detailPage = async (
   }
 
   nextAndPreviousResult.data.allMarkdownRemark.edges.forEach((edge) => {
+
+    if (!edge.node.frontmatter || !edge.node.frontmatter.tags) {
+      throw new Error("Failed to get post details.")
+    }
+
     const context: DetailPageContext = {
       id: edge.node.id,
       next: edge.next,
       prev: edge.previous,
+      tags: edge.node.frontmatter.tags.filter(t => Boolean(t)) as string[]
     };
-
-    if (!edge.node.frontmatter) {
-      throw new Error("Failed to get post details.")
-    }
 
     createPage({
       path: `${edge.node.frontmatter.path}`,
@@ -115,6 +121,7 @@ const pagination = async (
             title
             path
             created
+            tags
             eyecatcher {
               childImageSharp {
                 gatsbyImageData(width: 120, height: 90)
