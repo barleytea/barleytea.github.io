@@ -2831,12 +2831,24 @@ export type MarkdownRemarkGroupConnectionGroupArgs = {
   field: MarkdownRemarkFieldSelector;
 };
 
+export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllTagsQuery = { tags: { group: Array<{ totalCount: number, tag?: string | null }> } };
+
 export type DetailPageQueryVariables = Exact<{
   id: Scalars['String'];
 }>;
 
 
 export type DetailPageQuery = { markdownRemark?: { excerpt?: string | null, id: string, html?: string | null, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null };
+
+export type PostsByTagQueryVariables = Exact<{
+  tag: Scalars['String'];
+}>;
+
+
+export type PostsByTagQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
 export type PostsPaginationQueryVariables = Exact<{
   skip: Scalars['Int'];

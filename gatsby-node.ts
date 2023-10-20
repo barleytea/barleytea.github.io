@@ -8,6 +8,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const { createPage } = actions;
   await pagination(createPage, graphql);
   await detailPage(createPage, graphql);
+  await tagListPage(createPage, graphql);
 };
 
 type NextEdge =
@@ -153,6 +154,46 @@ const pagination = async (
         totalPages: totalPages,
         currentPage: i + 1,
       },
+    });
+  });
+}
+
+export interface TagListContext {
+  tag: string;
+}
+
+const tagListPage = async (
+  createPage: Parameters<
+    NonNullable<GatsbyNode["createPages"]>
+  >["0"]["actions"]["createPage"],
+  graphql: Parameters<NonNullable<GatsbyNode["createPages"]>>["0"]["graphql"]
+) => {
+  const tagList = await graphql<Queries.tagListQuery>(`
+    query tagList {
+      tags: allMarkdownRemark {
+        group(field: { frontmatter: { tags: SELECT } }) {
+          tag: fieldValue
+          totalCount
+        }
+      }
+    }
+  `);
+
+  if (!tagList.data || tagList.errors) {
+    throw new Error("Faild to get tags.");
+  }
+
+  tagList.data.tags.group.forEach((tag) => {
+    if (tag.tag === null) {
+      throw new Error("Tag not found");
+    }
+    const context: TagListContext = {
+      tag: tag.tag,
+    };
+    createPage({
+      path: `/tag-list/${tag.tag}`,
+      component: path.resolve("./src/templates/posts-by-tag.tsx"),
+      context,
     });
   });
 }
