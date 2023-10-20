@@ -10,9 +10,13 @@ export const Header: ComponentType = () => {
             barlog.tech
           </Link>
         </div>
-        <div className="flex">
-          <Link to="/about-me" className="mr-2 text-[color:var(--text-color)]">
+        <div className="flex mr-2">
+          <Link to="/about-me" className="mr-2 text-[color:var(--text-color)] hover:[color:var(--primary-color)]">
             About Me
+          </Link>
+          <p className="mr-2 text-[color:var(--text-color)]">|</p>
+          <Link to="/tag-list" className="mr-2 text-[color:var(--text-color)] hover:[color:var(--primary-color)]">
+            Tags
           </Link>
         </div>
       </div>
