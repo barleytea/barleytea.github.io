@@ -48,6 +48,6 @@ export const Normal: Story = {
           },
         },
       },
-    ]
+    ],
   },
 }

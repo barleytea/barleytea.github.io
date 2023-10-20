@@ -22,7 +22,7 @@ const RootBlogList = ({
         <ContentsHeader
           markdownMeta={data.markdownRemark.frontmatter}
         ></ContentsHeader>
-        <div className="grid gap-x-6 grid-cols-[70%_30%]">
+        <div className="grid grid-cols-[70%_30%] gap-x-6">
           <MainColumn detailPage={data.markdownRemark} />
           <aside>
             <SideColumn tags={data.tags.nodes}></SideColumn>
@@ -56,10 +56,7 @@ export const details = graphql`
       }
     }
     tags: allMarkdownRemark(
-      filter: { 
-        id: { ne: $id }
-        frontmatter: { tags: { in: $tags } } 
-      }
+      filter: { id: { ne: $id }, frontmatter: { tags: { in: $tags } } }
       limit: 10
       sort: { frontmatter: { created: DESC } }
     ) {

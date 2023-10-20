@@ -9,7 +9,7 @@ export const RelatedPostList: ComponentType<RelatedPostListProps> = ({
   posts,
 }) => {
   return (
-    <ul className='p-0 border-solid border-[color:var(--text-color)] rounded'>
+    <ul className="rounded border-solid border-[color:var(--text-color)] p-0">
       {posts.map((p) => (
         <RelatedPostListItem key={p.frontmatter?.path} post={p} />
       ))}

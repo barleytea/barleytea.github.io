@@ -8,8 +8,10 @@ interface Props {
 export const SideColumn: ComponentType<Props> = ({ tags }) => {
   return (
     <div>
-      <section className='mb-12'>
-        <h2 className="text-xl mb-4 text-[color:var(--text-color)]">Related Posts</h2>
+      <section className="mb-12">
+        <h2 className="mb-4 text-xl text-[color:var(--text-color)]">
+          Related Posts
+        </h2>
         <RelatedPostList posts={tags} />
       </section>
     </div>
