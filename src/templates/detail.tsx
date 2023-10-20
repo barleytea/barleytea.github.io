@@ -1,7 +1,7 @@
 import { PageProps, graphql } from 'gatsby'
 import { DetailPageContext } from '../../gatsby-node'
 import { Layout } from '../components/layout'
-import { MainColumn } from '../components/main-clumn'
+import { MainColumn } from '../components/main-column'
 import { ContentsHeader } from '../components/contents-header'
 import { NextAndPrevious } from '../components/next-previous'
 
@@ -44,6 +44,7 @@ export const details = graphql`
         path
         title
         created
+        tags
         eyecatcher {
           childImageSharp {
             gatsbyImageData(width: 300, height: 300, placeholder: BLURRED)

@@ -64,7 +64,8 @@ export const RightWithLongText: Story = {
   args: {
     post: {
       frontmatter: {
-        title: 'LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle',
+        title:
+          'LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle',
         created: '2023-10-04',
         path: 'sample003',
         eyecatcher: {
@@ -87,7 +88,8 @@ export const RightWithLongTextJapanese: Story = {
   args: {
     post: {
       frontmatter: {
-        title: '長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル',
+        title:
+          '長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル',
         created: '2023-10-04',
         path: 'sample003',
         eyecatcher: {

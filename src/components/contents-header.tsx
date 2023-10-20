@@ -1,5 +1,6 @@
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { ComponentType } from 'react'
+import { TagList } from './tag-list'
 
 export const ContentsHeader: ComponentType<{
   markdownMeta: NonNullable<
@@ -10,7 +11,8 @@ export const ContentsHeader: ComponentType<{
     !markdownMeta ||
     !markdownMeta.title ||
     !markdownMeta.created ||
-    !markdownMeta.eyecatcher
+    !markdownMeta.eyecatcher ||
+    !markdownMeta.tags
   ) {
     throw new Error('Invalid node')
   }
@@ -22,8 +24,9 @@ export const ContentsHeader: ComponentType<{
 
   return (
     <div className="markdown">
-      <h1>{markdownMeta.title}</h1>
+      <h1 className="break-all">{markdownMeta.title}</h1>
       <p className="text-sm">{markdownMeta.created}</p>
+      <TagList tags={markdownMeta.tags} />
       <GatsbyImage image={image} alt="thumbnail" />
     </div>
   )

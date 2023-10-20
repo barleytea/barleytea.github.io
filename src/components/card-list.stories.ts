@@ -23,6 +23,7 @@ export const Normal: Story = {
           title: 'Sample001',
           created: '2023-10-02',
           path: 'sample001',
+          tags: ['tag'],
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -41,6 +42,7 @@ export const Normal: Story = {
           title: 'Sample002',
           created: '2023-10-03',
           path: 'sample001',
+          tags: ['tag'],
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -59,6 +61,7 @@ export const Normal: Story = {
           title: 'Sample003',
           created: '2023-10-04',
           path: 'sample003',
+          tags: ['tag'],
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -77,6 +80,7 @@ export const Normal: Story = {
           title: 'Sample004',
           created: '2023-10-05',
           path: 'sample004',
+          tags: ['tag'],
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -95,6 +99,7 @@ export const Normal: Story = {
           title: 'Sample005',
           created: '2023-10-06',
           path: 'sample005',
+          tags: ['tag'],
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -113,6 +118,7 @@ export const Normal: Story = {
           title: 'Sample006',
           created: '2023-10-07',
           path: 'sample006',
+          tags: ['tag'],
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {

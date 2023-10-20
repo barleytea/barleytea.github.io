@@ -20,6 +20,7 @@ export const Normal: Story = {
       title: 'Sample さんぷる サンプル 見本',
       created: '2023-10-02',
       path: 'sample001',
+      tags: ['tag'],
       eyecatcher: {
         childImageSharp: {
           gatsbyImageData: {
