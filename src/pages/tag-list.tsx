@@ -1,5 +1,5 @@
-import { Link, PageProps, graphql } from "gatsby";
-import { Layout } from "../components/layout";
+import { Link, PageProps, graphql } from 'gatsby'
+import { Layout } from '../components/layout'
 
 const TagList = ({ data }: PageProps<Queries.getAllTagsQuery>) => {
   return (
@@ -7,7 +7,10 @@ const TagList = ({ data }: PageProps<Queries.getAllTagsQuery>) => {
       <h1 className="my-4 text-xl text-[color:var(--text-color)]">タグ一覧</h1>
       <ul className="flex flex-wrap">
         {data.tags.group.map((t) => (
-          <li key={t.tag} className="my-1 mx-2 text-[color:var(--primary-color)] hover:invert">
+          <li
+            key={t.tag}
+            className="mx-2 my-1 text-[color:var(--primary-color)] hover:invert"
+          >
             <Link to={`/tag-list/${t.tag}`}>
               {t.tag}({t.totalCount})
             </Link>
@@ -15,10 +18,10 @@ const TagList = ({ data }: PageProps<Queries.getAllTagsQuery>) => {
         ))}
       </ul>
     </Layout>
-  );
-};
+  )
+}
 
-export default TagList;
+export default TagList
 
 export const allTags = graphql`
   query getAllTags {
@@ -29,4 +32,4 @@ export const allTags = graphql`
       }
     }
   }
-`;
+`

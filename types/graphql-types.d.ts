@@ -2838,10 +2838,11 @@ export type GetAllTagsQuery = { tags: { group: Array<{ totalCount: number, tag?:
 
 export type DetailPageQueryVariables = Exact<{
   id: Scalars['String'];
+  tags?: InputMaybe<Array<Scalars['String']> | Scalars['String']>;
 }>;
 
 
-export type DetailPageQuery = { markdownRemark?: { excerpt?: string | null, id: string, html?: string | null, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null };
+export type DetailPageQuery = { markdownRemark?: { id: string, html?: string | null, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null, tags: { nodes: Array<{ frontmatter?: { path?: string | null, title?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
 export type PostsByTagQueryVariables = Exact<{
   tag: Scalars['String'];
