@@ -31,7 +31,9 @@ export const Card: ComponentType<{
       <div className="flex flex-col justify-between">
         <div className="break-all p-2">
           <div className="font-semibold">{node.frontmatter.title}</div>
-          <div className="text-sm font-light italic">{node.frontmatter.created}</div>
+          <div className="text-sm font-light italic">
+            {node.frontmatter.created}
+          </div>
         </div>
         <div className="mt-auto">
           <TagList tags={node.frontmatter.tags} />

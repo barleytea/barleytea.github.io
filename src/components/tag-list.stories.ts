@@ -6,7 +6,7 @@ const meta = {
   component: TagList,
   tags: ['autodocs'],
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
 } satisfies Meta<typeof TagList>
 
@@ -15,6 +15,6 @@ type Story = StoryObj<typeof meta>
 
 export const Normal: Story = {
   args: {
-    tags: ['tag', 'tag2']
-  }
+    tags: ['tag', 'tag2'],
+  },
 }
