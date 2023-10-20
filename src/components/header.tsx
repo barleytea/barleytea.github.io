@@ -6,16 +6,22 @@ export const Header: ComponentType = () => {
     <header className="fixed z-10 h-[var(--header-height)] w-full bg-[color:var(--header-color)]">
       <div className="flex items-center justify-between py-3">
         <div>
-          <Link to="/" className="ml-1 text-4xl text-[color:var(--text-color)]">
+          <Link to="/" className="ml-4 text-4xl text-[color:var(--text-color)]">
             barlog.tech
           </Link>
         </div>
-        <div className="flex mr-2">
-          <Link to="/about-me" className="mr-2 text-[color:var(--text-color)] hover:[color:var(--primary-color)]">
+        <div className="mr-2 flex">
+          <Link
+            to="/about-me"
+            className="mr-2 text-[color:var(--text-color)] hover:[color:var(--primary-color)]"
+          >
             About Me
           </Link>
           <p className="mr-2 text-[color:var(--text-color)]">|</p>
-          <Link to="/tag-list" className="mr-2 text-[color:var(--text-color)] hover:[color:var(--primary-color)]">
+          <Link
+            to="/tag-list"
+            className="mr-2 text-[color:var(--text-color)] hover:[color:var(--primary-color)]"
+          >
             Tags
           </Link>
         </div>

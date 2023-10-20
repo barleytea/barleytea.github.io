@@ -4,6 +4,7 @@ import { Layout } from '../components/layout'
 import { MainColumn } from '../components/main-column'
 import { ContentsHeader } from '../components/contents-header'
 import { NextAndPrevious } from '../components/next-previous'
+import { SideColumn } from '../components/side-column'
 
 const RootBlogList = ({
   data,
@@ -21,8 +22,11 @@ const RootBlogList = ({
         <ContentsHeader
           markdownMeta={data.markdownRemark.frontmatter}
         ></ContentsHeader>
-        <div className="grid gap-x-6">
+        <div className="grid gap-x-6 grid-cols-[70%_30%]">
           <MainColumn detailPage={data.markdownRemark} />
+          <aside>
+            <SideColumn tags={data.tags.nodes}></SideColumn>
+          </aside>
           <section className="mt-4">
             <NextAndPrevious next={pageContext.next} prev={pageContext.prev} />
           </section>
@@ -35,9 +39,8 @@ const RootBlogList = ({
 export default RootBlogList
 
 export const details = graphql`
-  query detailPage($id: String!) {
+  query detailPage($id: String!, $tags: [String!]) {
     markdownRemark(id: { eq: $id }) {
-      excerpt(pruneLength: 140, truncate: true)
       id
       html
       frontmatter {
@@ -48,6 +51,26 @@ export const details = graphql`
         eyecatcher {
           childImageSharp {
             gatsbyImageData(width: 300, height: 300, placeholder: BLURRED)
+          }
+        }
+      }
+    }
+    tags: allMarkdownRemark(
+      filter: { 
+        id: { ne: $id }
+        frontmatter: { tags: { in: $tags } } 
+      }
+      limit: 10
+      sort: { frontmatter: { created: DESC } }
+    ) {
+      nodes {
+        frontmatter {
+          path
+          title
+          eyecatcher {
+            childImageSharp {
+              gatsbyImageData(width: 120, height: 90)
+            }
           }
         }
       }
