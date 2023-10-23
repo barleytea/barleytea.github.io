@@ -24,7 +24,7 @@ cat << EOT >> index.md
 title: "$title"
 created: "$CREATED_HYPHEN"
 path: "/${slug}"
-eyecatcher: "./eyecatcher.png"
+eyecatcher: "../../images/barleytea.png"
 tags: []
 ---
 EOT
