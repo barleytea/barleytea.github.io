@@ -116,8 +116,13 @@
     white-space: pre-line;
   }
 
+  /* mermaid */
   .node foreignObject {
     height: 100%;
     overflow: visible;
+  }
+
+  svg {
+    @apply bg-[color:var(--text-color)];
   }
 }
