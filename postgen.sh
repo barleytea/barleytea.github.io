@@ -27,4 +27,7 @@ path: "/${slug}"
 eyecatcher: "../../images/barleytea.png"
 tags: []
 ---
+
+```toc
+```
 EOT
