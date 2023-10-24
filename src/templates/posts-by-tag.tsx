@@ -42,3 +42,11 @@ export const postsPaginationQuery = graphql`
     }
   }
 `
+
+export const Head = () => {
+  return (
+    <>
+      <title>barlog.tech</title>
+    </>
+  )
+}

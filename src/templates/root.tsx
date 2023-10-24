@@ -32,7 +32,6 @@ export const postsPagination = graphql`
   query postsPagination($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { frontmatter: { created: DESC } }
-      filter: { frontmatter: { path: { ne: "/about-me" } } }
       limit: $limit
       skip: $skip
     ) {
@@ -53,3 +52,11 @@ export const postsPagination = graphql`
     }
   }
 `
+
+export const Head = () => {
+  return (
+    <>
+      <title>barlog.tech</title>
+    </>
+  )
+}

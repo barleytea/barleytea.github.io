@@ -74,3 +74,11 @@ export const details = graphql`
     }
   }
 `
+
+export const Head = () => {
+  return (
+    <>
+      <title>barlog.tech</title>
+    </>
+  )
+}
