@@ -35,6 +35,15 @@ const config: GatsbyConfig = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-mermaid`,
+            options: /** @type {import('gatsby-remark-mermaid').Options} */ ({
+              mermaidConfig: {
+                theme: 'neutral',
+                themeCSS: '.node rect { fill: #fff; }',
+              }
+            })
+          },
           "gatsby-remark-code-titles",
           {
             resolve: `gatsby-remark-images`,
