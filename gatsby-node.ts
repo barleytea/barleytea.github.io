@@ -33,7 +33,6 @@ const detailPage = async (
     query nextAndPrevious {
       allMarkdownRemark(
         sort: { frontmatter: { created: DESC } }
-        filter: { frontmatter: { path: { ne: "/about-me" } } }
       ) {
         edges {
           next {
@@ -114,7 +113,6 @@ const pagination = async (
     query pagination {
       allMarkdownRemark(
         sort: { frontmatter: { created: DESC } }
-        filter: { frontmatter: { path: { ne: "/about-me" } } }
         limit: 1000
       ) {
         nodes {
