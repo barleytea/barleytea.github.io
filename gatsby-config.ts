@@ -12,7 +12,12 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   jsxRuntime: 'automatic',
   plugins: [
-    "gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
+    "gatsby-plugin-postcss", "gatsby-plugin-image", {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: '/',
+      },
+    }, {
       resolve: 'gatsby-plugin-manifest',
       options: {
         "icon": "src/images/barleytea.png"
