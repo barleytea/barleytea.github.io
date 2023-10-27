@@ -26,7 +26,7 @@
     "autoprefixer": "^10.4.16",
     "gatsby": "^5.12.4",
     "gatsby-plugin-canonical-urls": "^5.12.0",
-    "gatsby-plugin-google-gtag": "^5.12.0",
+    "gatsby-plugin-google-gtag": "^5.12.3",
     "gatsby-plugin-graphql-codegen": "^3.1.1",
     "gatsby-plugin-image": "^3.12.0",
     "gatsby-plugin-manifest": "^5.12.0",

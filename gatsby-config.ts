@@ -21,17 +21,22 @@ const config: GatsbyConfig = {
         output: '/',
       },
     }, {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['G-Z6KEETN4GT'],
+      }
+    }, {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://barlog.tech`,
         stripQueryString: true,
       },
     }, {
-      resolve: 'gatsby-plugin-robots-txt', // 追加
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://barlog.tech',
         sitemap: 'https://barlog.tech/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
+        policy: [{ userAgent: '*', allow: '/' }],
       }
     }, {
       resolve: 'gatsby-plugin-manifest',
