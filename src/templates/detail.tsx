@@ -1,10 +1,12 @@
-import { PageProps, graphql } from 'gatsby'
+import { HeadProps, PageProps, graphql } from 'gatsby'
 import { DetailPageContext } from '../../gatsby-node'
 import { Layout } from '../components/layout'
 import { MainColumn } from '../components/main-column'
 import { ContentsHeader } from '../components/contents-header'
 import { NextAndPrevious } from '../components/next-previous'
 import { SideColumn } from '../components/side-column'
+import SEO from '../components/seo'
+import { getSrc } from 'gatsby-plugin-image'
 
 const RootBlogList = ({
   data,
@@ -75,10 +77,21 @@ export const details = graphql`
   }
 `
 
-export const Head = () => {
-  return (
-    <>
-      <title>barlog.tech</title>
-    </>
-  )
+export const Head = ({ data }: HeadProps<Queries.detailPageQuery>) => {
+  if (
+    !data.markdownRemark?.frontmatter?.title ||
+    !data.markdownRemark?.frontmatter?.created ||
+    !data.markdownRemark?.frontmatter?.eyecatcher?.childImageSharp
+  ) {
+    throw new Error("Insufficient details");
+  }
+
+  const eyecatcherPath = getSrc(
+    data.markdownRemark.frontmatter.eyecatcher.childImageSharp,
+  );
+  return <SEO 
+    title={data.markdownRemark.frontmatter.title}
+    path={`${data.markdownRemark.frontmatter.path}/`}
+    eyecatcherPath={eyecatcherPath}
+  />
 }
