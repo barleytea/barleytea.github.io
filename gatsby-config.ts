@@ -18,6 +18,12 @@ const config: GatsbyConfig = {
         output: '/',
       },
     }, {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://barlog.tech`,
+        stripQueryString: true,
+      },
+    },{
       resolve: 'gatsby-plugin-manifest',
       options: {
         "icon": "src/images/barleytea.png"
