@@ -23,7 +23,14 @@ const config: GatsbyConfig = {
         siteUrl: `https://barlog.tech`,
         stripQueryString: true,
       },
-    },{
+    }, {
+      resolve: 'gatsby-plugin-robots-txt', // 追加
+      options: {
+        host: 'https://barlog.tech',
+        sitemap: 'https://barlog.tech/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }, {
       resolve: 'gatsby-plugin-manifest',
       options: {
         "icon": "src/images/barleytea.png"
