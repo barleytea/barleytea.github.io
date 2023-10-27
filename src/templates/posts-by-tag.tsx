@@ -1,7 +1,8 @@
-import { PageProps, graphql } from 'gatsby'
+import { HeadProps, PageProps, graphql } from 'gatsby'
 import { TagListContext } from '../../gatsby-node'
 import { Layout } from '../components/layout'
 import { CardList } from '../components/card-list'
+import SEO from '../components/seo'
 
 const PostsByTag = ({
   data,
@@ -43,10 +44,8 @@ export const postsPaginationQuery = graphql`
   }
 `
 
-export const Head = () => {
-  return (
-    <>
-      <title>barlog.tech</title>
-    </>
-  )
-}
+export const Head = ({
+  pageContext,
+}: HeadProps<Queries.postsByTagQuery, TagListContext>) => {
+  return <SEO title={`${pageContext.tag} の記事一覧`} />;
+};

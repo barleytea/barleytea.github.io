@@ -2,6 +2,7 @@ import { graphql, type PageProps } from 'gatsby'
 import { Layout } from '../components/layout'
 import { CardList } from '../components/card-list'
 import { Pagination } from '../components/pagination'
+import SEO from '../components/seo'
 
 const PostList = ({
   data,
@@ -54,9 +55,5 @@ export const postsPagination = graphql`
 `
 
 export const Head = () => {
-  return (
-    <>
-      <title>barlog.tech</title>
-    </>
-  )
+  return <SEO />
 }

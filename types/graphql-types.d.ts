@@ -281,6 +281,8 @@ export type SiteSiteMetadata = {
   description?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
   siteUrl?: Maybe<Scalars['String']>;
+  twitterUserName?: Maybe<Scalars['String']>;
+  image?: Maybe<Scalars['String']>;
 };
 
 export type SiteFunction = Node & {
@@ -1878,6 +1880,8 @@ export type SiteSiteMetadataFilterInput = {
   description?: InputMaybe<StringQueryOperatorInput>;
   author?: InputMaybe<StringQueryOperatorInput>;
   siteUrl?: InputMaybe<StringQueryOperatorInput>;
+  twitterUserName?: InputMaybe<StringQueryOperatorInput>;
+  image?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type SiteGraphqlTypegenFilterInput = {
@@ -1952,6 +1956,8 @@ export type SiteSiteMetadataFieldSelector = {
   description?: InputMaybe<FieldSelectorEnum>;
   author?: InputMaybe<FieldSelectorEnum>;
   siteUrl?: InputMaybe<FieldSelectorEnum>;
+  twitterUserName?: InputMaybe<FieldSelectorEnum>;
+  image?: InputMaybe<FieldSelectorEnum>;
 };
 
 export type SiteGraphqlTypegenFieldSelector = {
@@ -2038,6 +2044,8 @@ export type SiteSiteMetadataSortInput = {
   description?: InputMaybe<SortOrderEnum>;
   author?: InputMaybe<SortOrderEnum>;
   siteUrl?: InputMaybe<SortOrderEnum>;
+  twitterUserName?: InputMaybe<SortOrderEnum>;
+  image?: InputMaybe<SortOrderEnum>;
 };
 
 export type SiteGraphqlTypegenSortInput = {
@@ -2830,6 +2838,11 @@ export type MarkdownRemarkGroupConnectionGroupArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   field: MarkdownRemarkFieldSelector;
 };
+
+export type SiteMetaDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SiteMetaDataQuery = { site?: { siteMetadata?: { title?: string | null, description?: string | null, twitterUserName?: string | null, image?: string | null, siteUrl?: string | null } | null } | null };
 
 export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
 

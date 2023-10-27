@@ -2,9 +2,12 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    author: 'barleytea',
-    title: 'barlog.tech',
-    siteUrl: 'https://barlog.tech',
+    author: `barleytea`,
+    title: `barlog.tech`,
+    description: `ソフトウェア開発を生業とするエンジニアのブログ。Webアプリケーション開発に関するメモや読書感想文など。`,
+    siteUrl: `https://barlog.tech`,
+    twitterUserName: `@barlog_tech`,
+    image: '/static/images/barleytea.png',
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
