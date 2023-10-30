@@ -24,9 +24,9 @@ const RootBlogList = ({
         <ContentsHeader
           markdownMeta={data.markdownRemark.frontmatter}
         ></ContentsHeader>
-        <div className="grid grid-cols-[70%_30%] gap-x-6">
+        <div className="grid md:grid-cols-[70%_30%] gap-x-6">
           <MainColumn detailPage={data.markdownRemark} />
-          <aside>
+          <aside className='invisible md:visible'>
             <SideColumn tags={data.tags.nodes}></SideColumn>
           </aside>
           <section className="mt-4">
@@ -83,15 +83,17 @@ export const Head = ({ data }: HeadProps<Queries.detailPageQuery>) => {
     !data.markdownRemark?.frontmatter?.created ||
     !data.markdownRemark?.frontmatter?.eyecatcher?.childImageSharp
   ) {
-    throw new Error("Insufficient details");
+    throw new Error('Insufficient details')
   }
 
   const eyecatcherPath = getSrc(
-    data.markdownRemark.frontmatter.eyecatcher.childImageSharp,
-  );
-  return <SEO 
-    title={data.markdownRemark.frontmatter.title}
-    path={`${data.markdownRemark.frontmatter.path}/`}
-    eyecatcherPath={eyecatcherPath}
-  />
+    data.markdownRemark.frontmatter.eyecatcher.childImageSharp
+  )
+  return (
+    <SEO
+      title={data.markdownRemark.frontmatter.title}
+      path={`${data.markdownRemark.frontmatter.path}/`}
+      eyecatcherPath={eyecatcherPath}
+    />
+  )
 }

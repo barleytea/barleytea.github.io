@@ -47,5 +47,5 @@ export const postsPaginationQuery = graphql`
 export const Head = ({
   pageContext,
 }: HeadProps<Queries.postsByTagQuery, TagListContext>) => {
-  return <SEO title={`${pageContext.tag} の記事一覧`} />;
-};
+  return <SEO title={`${pageContext.tag} の記事一覧`} />
+}
