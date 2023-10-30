@@ -48,6 +48,7 @@ export const SEO: ComponentType<SEOProps> = ({
 
   return (
     <>
+      <html lang="ja" />
       <title>{pageTitle}</title>
       <meta property="og:title" content={title} />
       <meta property="og:description" content={siteMetaData.description} />

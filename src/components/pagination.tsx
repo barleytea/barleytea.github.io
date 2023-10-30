@@ -14,17 +14,21 @@ export const Pagination: ComponentType<Props> = ({
     <ul className="flex list-none pl-0 text-[color:var(--text-color)]">
       {new Array(totalPages).fill(0).map((_, idx) => {
         return (
-          <Link to={idx === 0 ? `/` : `/posts/${idx + 1}`} key={idx}>
-            <li
-              className={
-                idx + 1 === currentPage
-                  ? `border-grey-500 flex h-12 w-12 items-center justify-center border bg-[color:var(--primary-color)] align-middle`
-                  : `border-grey-500 flex h-12 w-12 items-center justify-center border align-middle hover:bg-[color:var(--primary-color)]`
-              }
+          <li
+            className={
+              idx + 1 === currentPage
+                ? `border-grey-500 h-12 w-12 border bg-[color:var(--primary-color)]`
+                : `border-grey-500 h-12 w-12 border hover:bg-[color:var(--primary-color)]`
+            }
+          >
+            <Link
+              to={idx === 0 ? `/` : `/posts/${idx + 1}`}
+              key={idx}
+              className="flex h-full w-full items-center justify-center align-middle"
             >
               {idx + 1}
-            </li>
-          </Link>
+            </Link>
+          </li>
         )
       })}
     </ul>
