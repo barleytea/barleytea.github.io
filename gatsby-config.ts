@@ -96,6 +96,57 @@ const config: GatsbyConfig = {
             },
           },
           {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+              name: `barlog.tech`,
+              short_name: `barlog.tech`,
+              start_url: `/`,
+              background_color: `#FFF`,
+              theme_color: `#000`,
+              display: `standalone`,
+              icon: `src/images/barleytea.png`,
+              icons: [
+                {
+                  src: `src/images/maskable_icon_x48.png`,
+                  sizes: `48x48`,
+                  type: `image/png`,
+                  "purpose": "any"
+                },
+                {
+                  src: `src/images/maskable_icon_x72.png`,
+                  sizes: `72x72`,
+                  type: `image/png`,
+                  "purpose": "any"
+                },
+                {
+                  src: `src/images/maskable_icon_x128.png`,
+                  sizes: `128x128`,
+                  type: `image/png`,
+                  "purpose": "any"
+                },
+                {
+                  src: `src/images/maskable_icon_x192.png`,
+                  sizes: `192x192`,
+                  type: `image/png`,
+                  "purpose": "maskable any"
+                },
+                {
+                  src: `src/images/maskable_icon_x384.png`,
+                  sizes: `384x384`,
+                  type: `image/png`,
+                  "purpose": "maskable any"
+                },
+                {
+                  src: `src/images/maskable_icon_x512.png`,
+                  sizes: `512x512`,
+                  type: `image/png`,
+                  "purpose": "maskable any"
+                }
+              ]
+            }
+          },
+          `gatsby-plugin-offline`,
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",
