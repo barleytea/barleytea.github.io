@@ -58,6 +58,7 @@ export const SEO: ComponentType<SEOProps> = ({
         property="og:image"
         content={`${siteMetaData.siteUrl}${pageImage}`}
       />
+      <meta name="description" content={siteMetaData.description} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={pageUrl} />
       <meta name="twitter:site" content={siteMetaData.twitterUserName} />
