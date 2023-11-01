@@ -21,6 +21,7 @@ export const Normal: Story = {
         title: 'Sample001',
         created: '2023-10-02',
         path: 'sample001',
+        tags: [], 
         eyecatcher: {
           childImageSharp: {
             gatsbyImageData: {
@@ -38,6 +39,7 @@ export const Normal: Story = {
         title: 'Sample003',
         created: '2023-10-04',
         path: 'sample003',
+        tags: [], 
         eyecatcher: {
           childImageSharp: {
             gatsbyImageData: {
