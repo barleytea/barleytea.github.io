@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -15,62 +15,74 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   jsxRuntime: 'automatic',
   plugins: [
-    "gatsby-plugin-postcss", "gatsby-plugin-image", {
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
+    {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         output: '/',
       },
-    }, {
+    },
+    {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
         trackingIds: ['G-Z6KEETN4GT'],
-      }
-    }, {
+      },
+    },
+    {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://barlog.tech`,
         stripQueryString: true,
       },
-    }, {
+    },
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://barlog.tech',
         sitemap: 'https://barlog.tech/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
-      }
-    }, {
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        "icon": "src/images/barleytea.png"
-      }
-    }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+        icon: 'src/images/barleytea.png',
+      },
+    },
+    'gatsby-plugin-mdx',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
-        "name": "images",
-        "path": "./src/images/"
+        name: 'images',
+        path: './src/images/',
       },
-      __key: "images"
-    }, {
-      resolve: "gatsby-source-filesystem",
+      __key: 'images',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "contents",
-        path: "./src/contents/",
+        name: 'contents',
+        path: './src/contents/',
       },
-      __key: "contents",
-    }, {
+      __key: 'contents',
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
             resolve: `gatsby-remark-mermaid`,
-            options: /** @type {import('gatsby-remark-mermaid').Options} */ ({
+            options: /** @type {import('gatsby-remark-mermaid').Options} */ {
               mermaidConfig: {
                 theme: 'neutral',
                 themeCSS: '.node rect { fill: #fff; }',
-              }
-            })
+              },
+            },
           },
-          "gatsby-remark-code-titles",
+          'gatsby-remark-code-titles',
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -87,12 +99,12 @@ const config: GatsbyConfig = {
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
-              exclude: "Table of Contents",
+              exclude: 'Table of Contents',
               tight: false,
               ordered: false,
               fromHeading: 2,
               toHeading: 6,
-              className: "toc"
+              className: 'toc',
             },
           },
           {
@@ -110,59 +122,60 @@ const config: GatsbyConfig = {
                   src: `src/images/maskable_icon_x48.png`,
                   sizes: `48x48`,
                   type: `image/png`,
-                  "purpose": "any"
+                  purpose: 'any',
                 },
                 {
                   src: `src/images/maskable_icon_x72.png`,
                   sizes: `72x72`,
                   type: `image/png`,
-                  "purpose": "any"
+                  purpose: 'any',
                 },
                 {
                   src: `src/images/maskable_icon_x128.png`,
                   sizes: `128x128`,
                   type: `image/png`,
-                  "purpose": "any"
+                  purpose: 'any',
                 },
                 {
                   src: `src/images/maskable_icon_x192.png`,
                   sizes: `192x192`,
                   type: `image/png`,
-                  "purpose": "maskable any"
+                  purpose: 'maskable any',
                 },
                 {
                   src: `src/images/maskable_icon_x384.png`,
                   sizes: `384x384`,
                   type: `image/png`,
-                  "purpose": "maskable any"
+                  purpose: 'maskable any',
                 },
                 {
                   src: `src/images/maskable_icon_x512.png`,
                   sizes: `512x512`,
                   type: `image/png`,
-                  "purpose": "maskable any"
-                }
-              ]
-            }
+                  purpose: 'maskable any',
+                },
+              ],
+            },
           },
           `gatsby-plugin-offline`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
               showLineNumbers: false,
-            }
+            },
           },
         ],
       },
-    },{
+    },
+    {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
-        fileName: `types/graphql-types.d.ts`
-      }
+        fileName: `types/graphql-types.d.ts`,
+      },
     },
-  ]
-};
+  ],
+}
 
-export default config;
+export default config
