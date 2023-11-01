@@ -18,16 +18,22 @@ const RootBlogList = ({
     throw new Error('MarkdownRemark shouled be provided')
   }
 
+  const postsRelatedToTag = data.tags.nodes
+  const displaySideMenu = postsRelatedToTag.length > 0
+  const SideColumnClassName = displaySideMenu
+    ? `invisible md:visible`
+    : `invisible`
+
   return (
     <Layout>
       <div className="grid gap-y-6">
         <ContentsHeader
           markdownMeta={data.markdownRemark.frontmatter}
         ></ContentsHeader>
-        <div className="grid md:grid-cols-[70%_30%] gap-x-6">
+        <div className="grid gap-x-6 md:grid-cols-[70%_30%]">
           <MainColumn detailPage={data.markdownRemark} />
-          <aside className='invisible md:visible'>
-            <SideColumn tags={data.tags.nodes}></SideColumn>
+          <aside className={SideColumnClassName}>
+            <SideColumn tags={postsRelatedToTag}></SideColumn>
           </aside>
           <section className="mt-4">
             <NextAndPrevious next={pageContext.next} prev={pageContext.prev} />
