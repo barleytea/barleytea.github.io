@@ -21,7 +21,7 @@ export const Left: Story = {
         title: 'Sample001',
         created: '2023-10-02',
         path: 'sample001',
-        tags: [], 
+        tags: [],
         eyecatcher: {
           childImageSharp: {
             gatsbyImageData: {
@@ -45,7 +45,7 @@ export const Right: Story = {
         title: 'Sample003',
         created: '2023-10-04',
         path: 'sample003',
-        tags: [], 
+        tags: [],
         eyecatcher: {
           childImageSharp: {
             gatsbyImageData: {
@@ -70,7 +70,7 @@ export const RightWithLongText: Story = {
           'LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle',
         created: '2023-10-04',
         path: 'sample003',
-        tags: [], 
+        tags: [],
         eyecatcher: {
           childImageSharp: {
             gatsbyImageData: {
@@ -95,7 +95,7 @@ export const RightWithLongTextJapanese: Story = {
           '長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル',
         created: '2023-10-04',
         path: 'sample003',
-        tags: [], 
+        tags: [],
         eyecatcher: {
           childImageSharp: {
             gatsbyImageData: {

@@ -8,8 +8,8 @@ const PostList = ({
   data,
   pageContext,
 }: PageProps<
-  Queries.postsPaginationQuery,
-  Queries.postsPaginationQueryVariables & {
+  Queries.PostsPaginationQuery,
+  Queries.PostsPaginationQueryVariables & {
     totalPages: number
     currentPage: number
   }
@@ -30,7 +30,7 @@ const PostList = ({
 export default PostList
 
 export const postsPagination = graphql`
-  query postsPagination($skip: Int!, $limit: Int!) {
+  query PostsPagination($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { frontmatter: { created: DESC } }
       limit: $limit

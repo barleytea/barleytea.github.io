@@ -2844,10 +2844,10 @@ export type SiteMetaDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type SiteMetaDataQuery = { site?: { siteMetadata?: { title?: string | null, description?: string | null, twitterUserName?: string | null, image?: string | null, siteUrl?: string | null } | null } | null };
 
-export type GetAllTagsQueryVariables = Exact<{ [key: string]: never; }>;
+export type AllTagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllTagsQuery = { tags: { group: Array<{ totalCount: number, tag?: string | null }> } };
+export type AllTagsQuery = { tags: { group: Array<{ totalCount: number, tag?: string | null }> } };
 
 export type DetailPageQueryVariables = Exact<{
   id: Scalars['String'];

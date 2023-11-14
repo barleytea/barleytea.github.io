@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 const PostsByTag = ({
   data,
   pageContext,
-}: PageProps<Queries.postsByTagQuery, TagListContext>) => {
+}: PageProps<Queries.PostsByTagQuery, TagListContext>) => {
   return (
     <Layout>
       <h1 className="my-4 text-xl text-[color:var(--text-color)]">
@@ -21,7 +21,7 @@ const PostsByTag = ({
 export default PostsByTag
 
 export const postsPaginationQuery = graphql`
-  query postsByTag($tag: String!) {
+  query PostsByTag($tag: String!) {
     allMarkdownRemark(
       filter: { frontmatter: { tags: { in: [$tag] } } }
       sort: { frontmatter: { created: DESC } }
@@ -46,6 +46,6 @@ export const postsPaginationQuery = graphql`
 
 export const Head = ({
   pageContext,
-}: HeadProps<Queries.postsByTagQuery, TagListContext>) => {
+}: HeadProps<Queries.PostsByTagQuery, TagListContext>) => {
   return <SEO title={`${pageContext.tag} の記事一覧`} />
 }

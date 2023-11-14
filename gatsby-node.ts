@@ -12,9 +12,9 @@ export const createPages: GatsbyNode['createPages'] = async ({
 }
 
 type NextEdge =
-  Queries.nextAndPreviousQuery['allMarkdownRemark']['edges'][number]['next']
+  Queries.NextAndPreviousQuery['allMarkdownRemark']['edges'][number]['next']
 type PrevEdge =
-  Queries.nextAndPreviousQuery['allMarkdownRemark']['edges'][number]['previous']
+  Queries.NextAndPreviousQuery['allMarkdownRemark']['edges'][number]['previous']
 
 export interface DetailPageContext {
   next: NextEdge
@@ -29,8 +29,8 @@ const detailPage = async (
   >['0']['actions']['createPage'],
   graphql: Parameters<NonNullable<GatsbyNode['createPages']>>['0']['graphql']
 ) => {
-  const nextAndPreviousResult = await graphql<Queries.nextAndPreviousQuery>(`
-    query nextAndPrevious {
+  const nextAndPreviousResult = await graphql<Queries.NextAndPreviousQuery>(`
+    query NextAndPrevious {
       allMarkdownRemark(sort: { frontmatter: { created: DESC } }) {
         edges {
           next {
@@ -108,8 +108,8 @@ const pagination = async (
   >['0']['actions']['createPage'],
   graphql: Parameters<NonNullable<GatsbyNode['createPages']>>['0']['graphql']
 ) => {
-  const paginationResult = await graphql<Queries.paginationQuery>(`
-    query pagination {
+  const paginationResult = await graphql<Queries.PaginationQuery>(`
+    query Pagination {
       allMarkdownRemark(sort: { frontmatter: { created: DESC } }, limit: 1000) {
         nodes {
           frontmatter {
@@ -162,8 +162,8 @@ const tagListPage = async (
   >['0']['actions']['createPage'],
   graphql: Parameters<NonNullable<GatsbyNode['createPages']>>['0']['graphql']
 ) => {
-  const tagList = await graphql<Queries.tagListQuery>(`
-    query tagList {
+  const tagList = await graphql<Queries.TagListQuery>(`
+    query TagList {
       tags: allMarkdownRemark {
         group(field: { frontmatter: { tags: SELECT } }) {
           tag: fieldValue

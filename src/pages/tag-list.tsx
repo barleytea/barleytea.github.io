@@ -1,7 +1,7 @@
 import { Link, PageProps, graphql } from 'gatsby'
 import { Layout } from '../components/layout'
 
-const TagList = ({ data }: PageProps<Queries.getAllTagsQuery>) => {
+const TagList = ({ data }: PageProps<Queries.AllTagsQuery>) => {
   return (
     <Layout>
       <h1 className="my-4 text-xl text-[color:var(--text-color)]">タグ一覧</h1>
@@ -24,7 +24,7 @@ const TagList = ({ data }: PageProps<Queries.getAllTagsQuery>) => {
 export default TagList
 
 export const allTags = graphql`
-  query getAllTags {
+  query AllTags {
     tags: allMarkdownRemark {
       group(field: { frontmatter: { tags: SELECT } }) {
         tag: fieldValue
