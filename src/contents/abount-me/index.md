@@ -18,6 +18,18 @@ I'm [barlog.tech](https://twitter.com/barlog_tech) | [barleytea](https://github.
 * Cognitive Science
 * Reinforcement Learning
 
+## Professional experience
+
+### Web Developer | [Dr.JOY](https://drjoy.jp) | Feburuary 2020 - present
+### Web Developer | [Works Human Intelligence](https://www.works-hi.co.jp/corporate) | August 2019 - January 2020
+### Wev Developer | [Works Applications](https://www.worksap.co.jp/) | April 2017 - July 2019
+
+## Education
+
+Chiba University | Chiba, Japan  
+Bachelor of Literature, 2017  
+Major: Psychology
+
 ## Favorites
 
 ### Novel
