@@ -11,7 +11,7 @@ import { getSrc } from 'gatsby-plugin-image'
 const RootBlogList = ({
   data,
   pageContext,
-}: PageProps<Queries.detailPageQuery, DetailPageContext>) => {
+}: PageProps<Queries.DetailPageQuery, DetailPageContext>) => {
   console.log(pageContext)
 
   if (!data.markdownRemark) {
@@ -47,7 +47,7 @@ const RootBlogList = ({
 export default RootBlogList
 
 export const details = graphql`
-  query detailPage($id: String!, $tags: [String!]) {
+  query DetailPage($id: String!, $tags: [String!]) {
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -83,7 +83,7 @@ export const details = graphql`
   }
 `
 
-export const Head = ({ data }: HeadProps<Queries.detailPageQuery>) => {
+export const Head = ({ data }: HeadProps<Queries.DetailPageQuery>) => {
   if (
     !data.markdownRemark?.frontmatter?.title ||
     !data.markdownRemark?.frontmatter?.created ||
