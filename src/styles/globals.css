@@ -53,7 +53,7 @@
   .markdown h4,
   .markdown h5,
   .markdown h6 {
-    @apply my-3 text-lg font-semibold underline;
+    @apply my-3 text-lg font-semibold;
   }
 
   @screen sm {

@@ -20,15 +20,22 @@ I'm [barlog.tech](https://twitter.com/barlog_tech) | [barleytea](https://github.
 
 ## Professional experience
 
-### Web Developer | [Dr.JOY](https://drjoy.jp) | Feburuary 2020 - present
-### Web Developer | [Works Human Intelligence](https://www.works-hi.co.jp/corporate) | August 2019 - January 2020
-### Wev Developer | [Works Applications](https://www.worksap.co.jp/) | April 2017 - July 2019
+### ■ Web Developer at [Dr.JOY](https://drjoy.jp)
+
+* Improved attendance management functions
+* Implemented payment function at the start of monetization
+
+### ■ Web Developer at [Works Applications](https://www.worksap.co.jp/) & [Works Human Intelligence](https://www.works-hi.co.jp/corporate) 
+
+* Improved task and schedule management functions
+
 
 ## Education
 
-Chiba University | Chiba, Japan  
-Bachelor of Literature, 2017  
-Major: Psychology
+### ■ Chiba University
+
+* Bachelor of Literature, 2017  
+* Major: Psychology
 
 ## Favorites
 
