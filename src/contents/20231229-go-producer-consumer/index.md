@@ -1,7 +1,7 @@
 ---
 title: "Go 並行処理超入門"
 created: "2023-12-29"
-path: "/go_producer_consumer"
+path: "/go-producer-consumer"
 eyecatcher: "./eyecatcher.png"
 tags: ["Go", "並行処理"]
 ---
