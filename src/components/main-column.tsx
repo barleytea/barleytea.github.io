@@ -1,7 +1,7 @@
 import { ComponentType } from 'react'
 
 interface Props {
-  detailPage: NonNullable<Queries.detailPageQuery['markdownRemark']>
+  detailPage: NonNullable<Queries.DetailPageQuery['markdownRemark']>
 }
 
 export const MainColumn: ComponentType<Props> = ({ detailPage }) => {

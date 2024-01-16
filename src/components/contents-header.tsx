@@ -4,7 +4,7 @@ import { TagList } from './tag-list'
 
 export const ContentsHeader: ComponentType<{
   markdownMeta: NonNullable<
-    Queries.detailPageQuery['markdownRemark']
+    Queries.DetailPageQuery['markdownRemark']
   >['frontmatter']
 }> = ({ markdownMeta }) => {
   if (

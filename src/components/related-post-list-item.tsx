@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { ComponentType } from 'react'
 
 interface RelatedPostListItemProps {
-  post: Queries.detailPageQuery['tags']['nodes'][number]
+  post: Queries.DetailPageQuery['tags']['nodes'][number]
 }
 
 export const RelatedPostListItem: ComponentType<RelatedPostListItemProps> = ({

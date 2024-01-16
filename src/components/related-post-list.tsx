@@ -2,7 +2,7 @@ import { ComponentType } from 'react'
 import { RelatedPostListItem } from './related-post-list-item'
 
 interface RelatedPostListProps {
-  posts: Queries.detailPageQuery['tags']['nodes']
+  posts: Queries.DetailPageQuery['tags']['nodes']
 }
 
 export const RelatedPostList: ComponentType<RelatedPostListProps> = ({

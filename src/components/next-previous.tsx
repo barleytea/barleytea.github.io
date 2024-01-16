@@ -2,8 +2,8 @@ import { ComponentType } from 'react'
 import { NextAndPreviousItem } from './next-previous-item'
 
 interface NextAndPreviousEdges {
-  next: Queries.nextAndPreviousQuery['allMarkdownRemark']['edges'][number]['next']
-  prev: Queries.nextAndPreviousQuery['allMarkdownRemark']['edges'][number]['previous']
+  next: Queries.NextAndPreviousQuery['allMarkdownRemark']['edges'][number]['next']
+  prev: Queries.NextAndPreviousQuery['allMarkdownRemark']['edges'][number]['previous']
 }
 
 export const NextAndPrevious: ComponentType<NextAndPreviousEdges> = ({

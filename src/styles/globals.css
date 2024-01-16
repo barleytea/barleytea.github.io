@@ -27,7 +27,11 @@
   }
 
   .markdown > .toc {
-    @apply bg-gray-800;
+    @apply ml-3 max-w-3xl bg-gray-800;
+  }
+
+  .markdown > .gatsby-highlight {
+    @apply ml-3 max-w-3xl;
   }
 
   @screen sm {
@@ -44,12 +48,14 @@
 
   /* Headers */
   .markdown h1 {
-    @apply my-6 text-2xl font-semibold;
+    @apply my-6 text-3xl font-semibold;
   }
   .markdown h2 {
-    @apply my-6 text-xl font-semibold underline;
+    @apply my-6 text-2xl font-semibold underline;
   }
-  .markdown h3,
+  .markdown h3 {
+    @apply my-4 text-xl font-semibold;
+  }
   .markdown h4,
   .markdown h5,
   .markdown h6 {
@@ -98,7 +104,7 @@
   }
   /* Blockquotes */
   .markdown blockquote {
-    @apply mb-4 border-l-4 border-gray-700 bg-gray-600 p-2 italic;
+    @apply mb-4 ml-3 max-w-3xl border-l-4 border-gray-700 bg-gray-600 p-2 italic;
   }
   .markdown blockquote > p {
     @apply mb-0;

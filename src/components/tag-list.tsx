@@ -4,7 +4,7 @@ import { Tag } from './tag'
 interface TagListProps {
   tags: NonNullable<
     NonNullable<
-      Queries.postsPaginationQuery['allMarkdownRemark']['nodes'][number]['frontmatter']
+      Queries.PostsPaginationQuery['allMarkdownRemark']['nodes'][number]['frontmatter']
     >['tags']
   >
 }

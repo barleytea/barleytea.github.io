@@ -2,7 +2,7 @@ import { ComponentType } from 'react'
 import { RelatedPostList } from './related-post-list'
 
 interface Props {
-  tags: Queries.detailPageQuery['tags']['nodes']
+  tags: Queries.DetailPageQuery['tags']['nodes']
 }
 
 export const SideColumn: ComponentType<Props> = ({ tags }) => {

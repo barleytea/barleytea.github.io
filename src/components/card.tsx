@@ -4,7 +4,7 @@ import { ComponentType } from 'react'
 import { TagList } from './tag-list'
 
 export const Card: ComponentType<{
-  node: Queries.paginationQuery['allMarkdownRemark']['nodes'][number]
+  node: Queries.PaginationQuery['allMarkdownRemark']['nodes'][number]
 }> = ({ node }) => {
   if (
     !node.frontmatter ||

@@ -5,10 +5,10 @@ import { ComponentType } from 'react'
 interface Props {
   post:
     | NonNullable<
-        Queries.nextAndPreviousQuery['allMarkdownRemark']['edges'][number]['next']
+        Queries.NextAndPreviousQuery['allMarkdownRemark']['edges'][number]['next']
       >
     | NonNullable<
-        Queries.nextAndPreviousQuery['allMarkdownRemark']['edges'][number]['previous']
+        Queries.NextAndPreviousQuery['allMarkdownRemark']['edges'][number]['previous']
       >
   direction: 'right' | 'left'
 }
