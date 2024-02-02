@@ -11,7 +11,7 @@ export const NextAndPrevious: ComponentType<NextAndPreviousEdges> = ({
   prev,
 }) => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between max-[480px]:flex-col">
       {prev ? (
         <NextAndPreviousItem post={prev} direction="left" />
       ) : (

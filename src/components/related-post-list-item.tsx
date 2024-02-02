@@ -29,9 +29,9 @@ export const RelatedPostListItem: ComponentType<RelatedPostListItemProps> = ({
     >
       <Link to={post.frontmatter.path}>
         <div className="flex h-full text-[color:var(--text-color)] hover:bg-[color:var(--text-color)] hover:text-[color:var(--base-color)]">
-          <GatsbyImage image={image} alt="thumbnail" />
-          <div className="w-full break-all px-2 py-1">
-            <span>{post.frontmatter.title}</span>
+          <GatsbyImage image={image} alt="thumbnail" className="shrink-0" />
+          <div className="w-full px-2 py-1">
+            <span className="break-all">{post.frontmatter.title}</span>
           </div>
         </div>
       </Link>

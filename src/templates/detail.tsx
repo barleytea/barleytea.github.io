@@ -20,19 +20,19 @@ const RootBlogList = ({
 
   const postsRelatedToTag = data.tags.nodes
   const displaySideMenu = postsRelatedToTag.length > 0
-  const SideColumnClassName = displaySideMenu
-    ? `invisible md:visible`
+  const sideColumnClassName = displaySideMenu
+    ? `invisible min-[480px]:visible`
     : `invisible`
 
   return (
     <Layout>
-      <div className="grid gap-y-6">
+      <div>
         <ContentsHeader
           markdownMeta={data.markdownRemark.frontmatter}
         ></ContentsHeader>
-        <div className="grid gap-x-6 md:grid-cols-[70%_30%]">
+        <div className="grid min-[480px]:gap-x-6 min-[480px]:grid-cols-[70%_30%] max-[480px]:grid-cols-[100%]" >
           <MainColumn detailPage={data.markdownRemark} />
-          <aside className={SideColumnClassName}>
+          <aside className={sideColumnClassName}>
             <SideColumn tags={postsRelatedToTag}></SideColumn>
           </aside>
           <section className="mt-4">
