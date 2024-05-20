@@ -20,18 +20,18 @@ I'm [barlog.tech](https://twitter.com/eng_barleytea) | [barleytea](https://githu
 
 ## Professional experience
 
-### ■ Web Developer at medical business company 
+### 💼 Software Engineer at a Medical Business Company 
 
 * Improved attendance management functions
 * Implemented payment function at the start of monetization
 
-### ■ Web Developer at ERP package vendor
+### 💼 Software Engineer at an ERP Package Vendor
 
 * Improved task and schedule management functions
 
 ## Education
 
-### ■ Chiba University
+### 🎓 Chiba University
 
 * Bachelor of Literature, 2017  
 * Major: Psychology
