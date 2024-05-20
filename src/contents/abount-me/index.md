@@ -6,11 +6,11 @@ eyecatcher: "../../images/barleytea.png"
 tags: ["About Me"]
 ---
 
-I'm [barlog.tech](https://twitter.com/barlog_tech) | [barleytea](https://github.com/barleytea). I am working as software developer in Tokyo, Japan.
+I'm [barlog.tech](https://twitter.com/eng_barleytea) | [barleytea](https://github.com/barleytea). I am working as software developer in Tokyo, Japan.
 
 ## How can I contact you?
 [barleytea362@gmail.com](mailto:barleytea362@gmail.com)  
-[@barlog.tech](https://twitter.com/barlog_tech)
+[@eng_barleytea](https://twitter.com/eng_barleytea)
 
 ## Interests
 
@@ -20,15 +20,14 @@ I'm [barlog.tech](https://twitter.com/barlog_tech) | [barleytea](https://github.
 
 ## Professional experience
 
-### ■ Web Developer at [Dr.JOY](https://drjoy.jp)
+### ■ Web Developer at medical business company 
 
 * Improved attendance management functions
 * Implemented payment function at the start of monetization
 
-### ■ Web Developer at [Works Applications](https://www.worksap.co.jp/) & [Works Human Intelligence](https://www.works-hi.co.jp/corporate) 
+### ■ Web Developer at ERP package vendor
 
 * Improved task and schedule management functions
-
 
 ## Education
 
@@ -52,10 +51,11 @@ I'm [barlog.tech](https://twitter.com/barlog_tech) | [barleytea](https://github.
 * [彼方のアストラ](http://astra-anime.com/)
 * [クジラの子らは砂上に歌う](https://kujisuna-anime.com/)
 
+### Movies
+
 ### Restaurant & Cafe
 
 * [焼肉 ホルモン 稲田](https://tabelog.com/tokyo/A1316/A131601/13049914/)
-
 * [Ripaille](https://tabelog.com/kanagawa/A1401/A140104/14005204/)
 * [PIZZERIA DA GRANZA](https://tabelog.com/tokyo/A1317/A131711/13202411/)
 * [酒菜と炭 てりや](https://tabelog.com/tokyo/A1317/A131702/13150448/)
@@ -67,4 +67,4 @@ I'm [barlog.tech](https://twitter.com/barlog_tech) | [barleytea](https://github.
 * [なんつッ亭](https://tabelog.com/kanagawa/A1405/A140501/14003844/)
 * [和利道](https://tabelog.com/tokyo/A1317/A131705/13096566/)
 * [AMAMERIA ESPRESSO](https://tabelog.com/tokyo/A1317/A131710/13114545/)
-
+* [ビストロサイクル](https://tabelog.com/tokyo/A1317/A131709/13197460/)
