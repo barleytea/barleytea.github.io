@@ -6,7 +6,7 @@ eyecatcher: "../../images/barleytea.png"
 tags: ["About Me"]
 ---
 
-I'm [barlog.tech](https://twitter.com/eng_barleytea) | [barleytea](https://github.com/barleytea). I am working as software developer in Tokyo, Japan.
+I'm [@eng_barleytea](https://twitter.com/eng_barleytea) | [barleytea](https://github.com/barleytea). I am working as a software engineer in Tokyo, Japan.
 
 ## How can I contact you?
 [barleytea362@gmail.com](mailto:barleytea362@gmail.com)  
