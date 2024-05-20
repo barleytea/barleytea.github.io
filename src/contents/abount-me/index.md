@@ -51,8 +51,6 @@ I'm [barlog.tech](https://twitter.com/eng_barleytea) | [barleytea](https://githu
 * [彼方のアストラ](http://astra-anime.com/)
 * [クジラの子らは砂上に歌う](https://kujisuna-anime.com/)
 
-### Movies
-
 ### Restaurant & Cafe
 
 * [焼肉 ホルモン 稲田](https://tabelog.com/tokyo/A1316/A131601/13049914/)
