@@ -26,7 +26,7 @@ $ make install # brew intall とか色々やる
 
 ## fish
 
-以下の手順で fish をデフォルトシェルにしてから`$ fisher insall hoge` すると、`fish: Unknown command: fish` とか怒られて plugin の install に失敗した。M1 絡みで brew の install path が変わったことが何か悪さしていると予想しているけれど、はっきりとは分からない。要調査。
+下記の手順で fish をデフォルトシェルにしてから`$ fisher insall hoge`すると、`fish: Unknown command: fish`とか怒られて plugin の install に失敗した。M1 絡みで brew の install path が変わったことが何か悪さしていると予想しているけれど、はっきりとは分からない。要調査。
 
 ```bash
 ### うまくいかなかった手順
@@ -47,7 +47,7 @@ $ sudo vi /etc/shells
 $ chsh -s /opt/homebrew/bin/fish # fish を default shell に
 ```
 
-これを機に、default shell を fish にするのをやめて、zsh から fish を起動するようにした。とりあえず私の環境では以下で全て解決。
+これを機に、default shell を fish にするのをやめて、Zsh から fish を起動するようにした。とりあえず私の環境では以下で全て解決。
 
 ```bash
 # .zshrc の末尾に以下を追記

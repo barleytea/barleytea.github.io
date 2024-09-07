@@ -11,11 +11,11 @@ tags: ["Java", "Spring"]
 
 ## 困ったこと
 
-RestTemplate で http request を送って 500 系のエラーが帰ってきた場合、`RestClientException` が送出され、戻り値としては http response が取得できない。
+RestTemplate で http request を送って 500 系のエラーが帰ってきた場合、`RestClientException`が送出され、戻り値としては http response が取得できない。
 
 ## 解決方法
 
-`RestClientException` のサブクラスである `RestClientResponseException` を catch すること。
+`RestClientException`のサブクラスである`RestClientResponseException`を catch すること。
 
 ```java
 } catch(RestClientResponseException e) {

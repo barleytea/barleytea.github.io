@@ -44,7 +44,7 @@ sequenceDiagram
     1. Spreadsheet 名 : isbn2notion
     2. sheet 名: books
     3. カラム名
-        1. id
+        1. ID
         2. isbn
         3. title
         4. publisher
@@ -57,26 +57,26 @@ sequenceDiagram
 
 ### AppSheet アプリを作成する
 
-#### [AppSheet](https://www.appsheet.com/Template/Apps) から新規アプリを作成し Columns の設定を行う
+#### [AppSheet](https://www.appsheet.com/Template/Apps)から新規アプリを作成し Columns の設定を行う
 
-1. `Make a new app` → `Start with your own data` と選択し、`App name` には任意の名前を入力する
-2. `Choose your data` を押下し、[上記](#spreadsheet-を準備する)で設定した Spreadsheet 名を選択し、`Select` を押下する
-3. App が作成されたら画面左カラムから `Data` → `Columns` と遷移し、[上記](#spreadsheet-を準備する)で設定した Spreadsheet 内の sheet 名（books）を選択した上で、以下のように各項目を修正する
+1. `Make a new app` → `Start with your own data`と選択し、`App name`には任意の名前を入力する
+2. `Choose your data`を押下し、[上記](#spreadsheet-を準備する)で設定した Spreadsheet 名を選択し、`Select`を押下する
+3. App が作成されたら画面左カラムから`Data` → `Columns`と遷移し、[上記](#spreadsheet-を準備する)で設定した Spreadsheet 内の sheet 名（books）を選択した上で、以下のように各項目を修正する
     ![AppSheet 列設定](./app-sheet-columns.png)
 
 #### AppSheet Workflow 機能から GAS を kick する設定を行う
 
-1. AppSheet の画面左カラムから `Automation` → `Bots` と遷移する
-2. `New Bot` を押下し、name として `When a books record is created, updated, or deleted, send a notification` を指定する
+1. AppSheet の画面左カラムから`Automation` → `Bots`と遷移する
+2. `New Bot`を押下し、name として`When a books record is created, updated, or deleted, send a notification`を指定する
     1. // TODO: ちょっと hacky な手順に見えるので、正攻法を確認すること
 3. Event の中身は以下のように設定する
     ![AppSheet Event 設定](./app-sheet-workflow-event.png)
-4. `Processes` タブに遷移して `table` として `books` を選択し、新しい `task` を作成する。`task` の中身は以下のように設定する
+4. `Processes`タブに遷移して`table`として`books`を選択し、新しい`task`を作成する。`task`の中身は以下のように設定する
     ![AppSheet Task 設定](./appsheet-task.png)
-5. `Bots` タブに戻り、作成した `task` を `event` に紐付ける
-6. 画面左カラムの `Manage` → `Integrations` → `IN: from cloud services to your app` を `Enable` にする
-7. `Create Application Access Key` を押下し、新しく Application Access Key を発行する
-8. `Show Access Key` を押下して表示される文字列と `App Id` を控えておく
+5. `Bots`タブに戻り、作成した`task`を`event`に紐付ける
+6. 画面左カラムの`Manage` → `Integrations` → `IN: from cloud services to your app`を`Enable`にする
+7. `Create Application Access Key`を押下し、新しく Application Access Key を発行する
+8. `Show Access Key`を押下して表示される文字列と`App Id`を控えておく
 
 ### Notion のデータベースを準備する
 

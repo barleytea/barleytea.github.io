@@ -11,9 +11,9 @@ tags: ["Java", "Spring"]
 
 ## TL; DR
 
-request として渡す Object に `MultiValueMap` を使用すること。
+request として渡す Object に`MultiValueMap`を使用すること。
 
-`application/json` の場合とは異なり、任意の Object を使うことはできない。
+`application/json`の場合とは異なり、任意の Object を使うことはできない。
 
 ```java
 // MultiValueMap に key, value を詰めて…
@@ -72,21 +72,21 @@ private RestTemplate restTemplate() {
 
 ## 詳細 | 何が起こっていたか
 
-1. RestTemplate は、response の Content-Type に応じて適切な `HttpMessageConverter` の実装を選択し、使用する
-    * `HttpMessageConverter` とは何ぞや？
+1. RestTemplate は、response の Content-Type に応じて適切な`HttpMessageConverter`の実装を選択し、使用する
+    * `HttpMessageConverter`とは何ぞや？
         
         > Strategy interface for converting from and to HTTP requests and responses.
         > 
         
         [HttpMessageConverter (Spring Framework 5.3.14 API)](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/converter/HttpMessageConverter.html)
         
-2. Content-Type が `application/x-www-form-urlencoded` の場合は、`FormHttpMessageConverter` を使用する
+2. Content-Type が`application/x-www-form-urlencoded`の場合は、`FormHttpMessageConverter`を使用する
     
     [spring-framework/HttpMessageConverterExtractor.java at main · spring-projects/spring-framework](https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/java/org/springframework/web/client/HttpMessageConverterExtractor.java)
     
-3. `FormHttpMessageConverter` は以下のように振る舞う
+3. `FormHttpMessageConverter`は以下のように振る舞う
     
-    > Implementation of [HttpMessageConverter](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/converter/HttpMessageConverter.html) to read and write 'normal' HTML forms and also to write (but not read) multipart data (e.g. file uploads).
+    > Implementation of [HttpMessageConverter](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/converter/HttpMessageConverter.html) to read and write 'normal’ HTML forms and also to write (but not read) multipart data (e.g. file uploads).
     > In other words, this converter can read and write the `"application/x-www-form-urlencoded"` media type as [MultiValueMap<String, String>](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/MultiValueMap.html), and it can also write (but not read) the `"multipart/form-data"` and `"multipart/mixed"` media types as [MultiValueMap<String, Object>](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/MultiValueMap.html).
 
     
@@ -94,7 +94,7 @@ private RestTemplate restTemplate() {
     
     [spring-framework/FormHttpMessageConverter.java at main · spring-projects/spring-framework](https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/java/org/springframework/http/converter/FormHttpMessageConverter.java)
     
-4. したがって、いくら任意の POJO を request に渡してもダメ。 `MultiValueMap` を使用すること
+4. したがって、いくら任意の POJO を request に渡してもダメ。 `MultiValueMap`を使用すること
 
     ```java
     // MultiValueMap に key, value を詰めて…
