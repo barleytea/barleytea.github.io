@@ -9,8 +9,9 @@ tags: ["About Me"]
 I'm [@eng_barleytea](https://twitter.com/eng_barleytea) | [barleytea](https://github.com/barleytea). I am working as a software engineer in Tokyo, Japan.
 
 ## How can I contact you?
-[barleytea362@gmail.com](mailto:barleytea362@gmail.com)  
-[@eng_barleytea](https://twitter.com/eng_barleytea)
+
+* email: [barleytea362@gmail.com](mailto:barleytea362@gmail.com)  
+* X: [@eng_barleytea](https://twitter.com/eng_barleytea)
 
 ## Interests
 
@@ -20,21 +21,7 @@ I'm [@eng_barleytea](https://twitter.com/eng_barleytea) | [barleytea](https://gi
 
 ## Professional experience
 
-### 💼 Software Engineer at a Medical Business Company 
-
-* Improved attendance management functions
-* Implemented payment function at the start of monetization
-
-### 💼 Software Engineer at an ERP Package Vendor
-
-* Improved task and schedule management functions
-
-## Education
-
-### 🎓 Chiba University
-
-* Bachelor of Literature, 2017  
-* Major: Psychology
+* [Resume](https://barlog.tech/barleytea/)
 
 ## Favorites
 
