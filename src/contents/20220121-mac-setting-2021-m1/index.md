@@ -6,6 +6,11 @@ eyecatcher: "../../images/barleytea.png"
 tags: ["MacOS", "dotfiles"]
 ---
 
+## 目次
+
+```toc
+```
+
 ## Rosetta 2
 
 ```bash
