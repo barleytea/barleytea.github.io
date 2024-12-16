@@ -118,7 +118,57 @@ npm run build:pdf
 
 ### GitHub Actions の設定
 
-WIP
+毎回上記のように手動で PDF を作成しても良いが、どうせなら GitHub Actions に乗せて CI を回そう。
+下記のように `.github/workflows/pdf.yml` を作成する。
+
+```yml
+name: Release PDF
+
+on:
+  push:
+    tags:
+    - 'v*'
+
+jobs:
+  build:
+    name: build pdf and upload release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: build pdf
+        run: npm run build:pdf
+      - name: create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path:  docs/README.pdf
+          asset_name: README.pdf
+          asset_content_type: application/pdf
+```
+
+push イベントでタグが `v*` の形式である場合、PDF をビルドして新しいリリースに PDF ファイルをアップロードしている。  
+これにより成果物をバージョン管理しつつ、[リリースページ](https://github.com/barleytea/barleytea/releases)から PDF をダウンロードできるようになる。
 
 ### 履歴書への対応
 
