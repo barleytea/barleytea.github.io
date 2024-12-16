@@ -3,7 +3,7 @@ import { ComponentType } from 'react'
 
 export const Header: ComponentType = () => {
   return (
-    <header className="fixed z-10 h-[var(--header-height)] w-full bg-[color:var(--header-color)]">
+    <header className="fixed z-10 h-[var(--header-height)] w-full bg-[color:var(--header-color)] font-['Oswald']">
       <div className="flex items-center justify-between py-3">
         <div>
           <Link to="/" className="ml-4 text-4xl text-[color:var(--text-color)]">
