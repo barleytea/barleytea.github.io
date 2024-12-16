@@ -7,12 +7,19 @@
 * [Gatsby](https://www.gatsbyjs.com/)
 * [Tailwind CSS](https://tailwindcss.com/)
 
-## 開発環境セットアップ
+## 開発環境起動
 
+```sh
+yarn install
+yarn run develop # run on :8000
 ```
-$ yarn install
-$ yarn run develop
+
+## Storybook
+
+```sh
+yarn run storybook # run on :6006
 ```
+
 
 ## 記事執筆
 
