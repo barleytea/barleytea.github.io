@@ -34,27 +34,39 @@ const storyBookConfig: StorybookConfig = {
   },
   core: {},
   webpackFinal: (config) => {
-    // workaround: https://github.com/storybookjs/storybook/issues/22796#issuecomment-1622399451
-    config.module.rules[2].exclude = [
-      /node_modules\/(?!(gatsby|gatsby-script)\/)/,
-    ]
-    config.module.rules.push({
+    type Rule = {
+      use?: Array<string | { loader: string }>
+      exclude?: Array<string | RegExp>
+    }
+    const babelLoader = (config.module?.rules as Rule[])?.find(rule =>
+      rule.use?.some(use =>
+        (typeof use === 'string' ? use : use.loader).includes('/babel-loader/')
+      )
+    )
+    if (babelLoader?.exclude) {
+      babelLoader.exclude[0] = /node_modules\/(?!gatsby|gatsby-script)/
+    }
+
+    const scssRule = {
       test: /\.scss$/,
       use: [
-        "style-loader",
-        {
-          loader: "css-loader",
-          options: {
-            modules: {
-              auto: true,
-            },
-            url: false,
-          },
+      "style-loader",
+      {
+        loader: "css-loader",
+        options: {
+        modules: {
+          auto: true,
         },
-        "sass-loader",
+        url: false,
+        },
+      },
+      "sass-loader",
       ],
       include: path.resolve(__dirname, "../src/"),
-    });
+    };
+    config.module?.rules?.push(scssRule);
+
+    
     return config
   },
 }
