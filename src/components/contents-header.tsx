@@ -25,9 +25,15 @@ export const ContentsHeader: ComponentType<{
   return (
     <div className="markdown">
       <h1 className="break-all">{markdownMeta.title}</h1>
-      <p className="text-sm">{markdownMeta.created}</p>
-      <TagList tags={markdownMeta.tags} />
-      <GatsbyImage image={image} alt="thumbnail" />
+      <div className="my-2">
+        <TagList tags={markdownMeta.tags} />
+      </div>
+      <p className="text-sm">
+        {markdownMeta.created}
+      </p>
+      <div className="mb-3">
+        <GatsbyImage image={image} alt="thumbnail" />
+      </div>
     </div>
   )
 }
