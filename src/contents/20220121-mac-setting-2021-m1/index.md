@@ -4,6 +4,7 @@ created: "2022-01-22"
 path: "/mac-setting-2021-m1"
 eyecatcher: "../../images/barleytea.png"
 tags: ["MacOS", "dotfiles"]
+category: "Tech"
 ---
 
 ## 目次

@@ -4,6 +4,7 @@ created: "2022-01-11"
 path: "/java8-exponential-backoff-retry"
 eyecatcher: "./eyecatcher.png"
 tags: ["Java"]
+category: "Tech"
 ---
 
 ## 目次

@@ -2,12 +2,11 @@ import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import { Layout } from '../components/layout'
 import { CardList } from '../components/card-list'
-import { Pagination } from '../components/pagination'
 import { CategoryTabs } from '../components/CategoryTabs'
+import { Pagination } from '../components/pagination'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
-import SEO from '../components/seo'
 
-interface RootPageData {
+interface PostsByCategory {
   allMarkdownRemark: {
     nodes: Array<{
       id: string
@@ -28,42 +27,35 @@ interface RootPageData {
 }
 
 interface PageContext {
-  limit: number
-  skip: number
+  category: string
+  categories: string[]
   totalPages: number
   currentPage: number
-  categories: string[]
-  category?: string
 }
 
-const RootPage: React.FC<PageProps<RootPageData, PageContext>> = ({ data, pageContext }) => {
-  const { categories, category } = pageContext
+const PostsByCategory: React.FC<PageProps<PostsByCategory, PageContext>> = ({ data, pageContext }) => {
+  const { category, categories, totalPages, currentPage } = pageContext
 
   return (
     <Layout>
-      <CategoryTabs 
-        categories={categories} 
-        currentCategory={category || ''} 
-      />
+      <CategoryTabs categories={categories} currentCategory={category} />
       <CardList nodes={data.allMarkdownRemark.nodes} />
       <div className="my-12 flex justify-center">
         <Pagination
-          totalPages={pageContext.totalPages}
-          currentPage={pageContext.currentPage}
+          totalPages={totalPages}
+          currentPage={currentPage}
         />
       </div>
     </Layout>
   )
 }
 
-export default RootPage
+export default PostsByCategory
 
 export const query = graphql`
-  query RootPage($skip: Int!, $limit: Int!, $category: String) {
+  query PostsByCategory($category: String!) {
     allMarkdownRemark(
       sort: { frontmatter: { created: DESC } }
-      limit: $limit
-      skip: $skip
       filter: { frontmatter: { category: { eq: $category } } }
     ) {
       nodes {
@@ -83,8 +75,4 @@ export const query = graphql`
       }
     }
   }
-`
-
-export const Head = () => {
-  return <SEO />
-}
+` 

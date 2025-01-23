@@ -4,6 +4,7 @@ created: "2023-01-13"
 path: "/isbn2notion"
 eyecatcher: "../../images/barleytea.png"
 tags: ["Notion", "Google Apps Script", "Google AppSheet"]
+category: "Tech"
 ---
 
 ## 目次

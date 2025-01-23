@@ -4,6 +4,7 @@ created: "1994-06-30"
 path: "/about-me"
 eyecatcher: "../../images/barleytea.png"
 tags: ["About Me"]
+category: "About Me"
 ---
 
 I’m [@eng_barleytea](https://twitter.com/eng_barleytea) | [barleytea](https://github.com/barleytea). I am working as a software engineer in Tokyo, Japan.

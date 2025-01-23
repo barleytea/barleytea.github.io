@@ -703,18 +703,11 @@ export type MarkdownRemarkTableOfContentsArgs = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
-  created?: Maybe<Scalars['Date']>;
+  created?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
-  eyecatcher?: Maybe<File>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-
-export type MarkdownRemarkFrontmatterCreatedArgs = {
-  formatString?: InputMaybe<Scalars['String']>;
-  fromNow?: InputMaybe<Scalars['Boolean']>;
-  difference?: InputMaybe<Scalars['String']>;
-  locale?: InputMaybe<Scalars['String']>;
+  category?: Maybe<Scalars['String']>;
+  eyecatcher?: Maybe<File>;
 };
 
 export type Query = {
@@ -1182,10 +1175,11 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: InputMaybe<StringQueryOperatorInput>;
-  created?: InputMaybe<DateQueryOperatorInput>;
+  created?: InputMaybe<StringQueryOperatorInput>;
   path?: InputMaybe<StringQueryOperatorInput>;
-  eyecatcher?: InputMaybe<FileFilterInput>;
   tags?: InputMaybe<StringQueryOperatorInput>;
+  category?: InputMaybe<StringQueryOperatorInput>;
+  eyecatcher?: InputMaybe<FileFilterInput>;
 };
 
 export type FileFilterInput = {
@@ -1457,8 +1451,9 @@ export type MarkdownRemarkFrontmatterFieldSelector = {
   title?: InputMaybe<FieldSelectorEnum>;
   created?: InputMaybe<FieldSelectorEnum>;
   path?: InputMaybe<FieldSelectorEnum>;
-  eyecatcher?: InputMaybe<FileFieldSelector>;
   tags?: InputMaybe<FieldSelectorEnum>;
+  category?: InputMaybe<FieldSelectorEnum>;
+  eyecatcher?: InputMaybe<FileFieldSelector>;
 };
 
 export type MarkdownHeadingFieldSelector = {
@@ -1659,8 +1654,9 @@ export type MarkdownRemarkFrontmatterSortInput = {
   title?: InputMaybe<SortOrderEnum>;
   created?: InputMaybe<SortOrderEnum>;
   path?: InputMaybe<SortOrderEnum>;
-  eyecatcher?: InputMaybe<FileSortInput>;
   tags?: InputMaybe<SortOrderEnum>;
+  category?: InputMaybe<SortOrderEnum>;
+  eyecatcher?: InputMaybe<FileSortInput>;
 };
 
 export type MarkdownHeadingSortInput = {
@@ -2855,22 +2851,30 @@ export type DetailPageQueryVariables = Exact<{
 }>;
 
 
-export type DetailPageQuery = { markdownRemark?: { id: string, html?: string | null, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null, tags: { nodes: Array<{ frontmatter?: { path?: string | null, title?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+export type DetailPageQuery = { markdownRemark?: { id: string, html?: string | null, frontmatter?: { path?: string | null, title?: string | null, created?: string | null, tags?: Array<string | null> | null, category?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null } | null, tags: { nodes: Array<{ frontmatter?: { path?: string | null, title?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+
+export type PostsByCategoryQueryVariables = Exact<{
+  category: Scalars['String'];
+}>;
+
+
+export type PostsByCategoryQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { title?: string | null, created?: string | null, path?: string | null, tags?: Array<string | null> | null, category?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
 export type PostsByTagQueryVariables = Exact<{
   tag: Scalars['String'];
 }>;
 
 
-export type PostsByTagQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+export type PostsByTagQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { path?: string | null, title?: string | null, created?: string | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
-export type PostsPaginationQueryVariables = Exact<{
+export type RootPageQueryVariables = Exact<{
   skip: Scalars['Int'];
   limit: Scalars['Int'];
+  category?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type PostsPaginationQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { path?: string | null, title?: string | null, created?: any | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+export type RootPageQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { title?: string | null, created?: string | null, path?: string | null, tags?: Array<string | null> | null, category?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 

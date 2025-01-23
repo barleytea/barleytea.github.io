@@ -1,17 +1,57 @@
 import { HeadProps, PageProps, graphql } from 'gatsby'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { DetailPageContext } from '../../gatsby-node'
 import { Layout } from '../components/layout'
 import { MainColumn } from '../components/main-column'
 import { ContentsHeader } from '../components/contents-header'
 import { NextAndPrevious } from '../components/next-previous'
 import { SideColumn } from '../components/side-column'
+import { CategoryTabs } from '../components/category-tabs'
 import SEO from '../components/seo'
 import { getSrc } from 'gatsby-plugin-image'
+
+interface DetailPageContextWithCategories extends DetailPageContext {
+  categories: string[]
+}
+
+interface DetailPageFrontmatter {
+  path: string | null
+  title: string | null
+  created: string | null
+  tags: readonly (string | null)[] | null
+  category: string | null
+  eyecatcher: {
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData
+    } | null
+  } | null
+}
+
+interface DetailPageData {
+  markdownRemark: {
+    id: string
+    html: string
+    frontmatter: DetailPageFrontmatter
+  } | null
+  tags: {
+    nodes: {
+      frontmatter: {
+        path: string | null
+        title: string | null
+        eyecatcher: {
+          childImageSharp: {
+            gatsbyImageData: IGatsbyImageData
+          } | null
+        } | null
+      } | null
+    }[]
+  }
+}
 
 const RootBlogList = ({
   data,
   pageContext,
-}: PageProps<Queries.DetailPageQuery, DetailPageContext>) => {
+}: PageProps<DetailPageData, DetailPageContextWithCategories>) => {
   console.log(pageContext)
 
   if (!data.markdownRemark) {
@@ -27,6 +67,10 @@ const RootBlogList = ({
   return (
     <Layout>
       <div>
+        <CategoryTabs
+          categories={pageContext.categories}
+          currentCategory={data.markdownRemark.frontmatter?.category || null}
+        />
         <ContentsHeader
           markdownMeta={data.markdownRemark.frontmatter}
         ></ContentsHeader>
@@ -56,6 +100,7 @@ export const details = graphql`
         title
         created
         tags
+        category
         eyecatcher {
           childImageSharp {
             gatsbyImageData(width: 300, height: 300, placeholder: BLURRED)
@@ -83,7 +128,7 @@ export const details = graphql`
   }
 `
 
-export const Head = ({ data }: HeadProps<Queries.DetailPageQuery>) => {
+export const Head = ({ data }: HeadProps<DetailPageData>) => {
   if (
     !data.markdownRemark?.frontmatter?.title ||
     !data.markdownRemark?.frontmatter?.created ||

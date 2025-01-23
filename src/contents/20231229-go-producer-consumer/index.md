@@ -4,6 +4,7 @@ created: "2023-12-29"
 path: "/go-producer-consumer"
 eyecatcher: "./eyecatcher.png"
 tags: ["Go", "並行処理"]
+category: "Tech"
 ---
 
 ## 目次

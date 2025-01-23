@@ -4,6 +4,7 @@ created: "2022-01-12"
 path: "/20220112-rust-version-each-project"
 eyecatcher: "./eyecatcher.png"
 tags: ["Rust"]
+category: "Tech"
 ---
 
 ```bash

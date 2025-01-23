@@ -7,6 +7,11 @@
 * [Gatsby](https://www.gatsbyjs.com/)
 * [Tailwind CSS](https://tailwindcss.com/)
 
+## 前提条件
+
+* Node.js 20.x
+* yarn
+
 ## 開発環境起動
 
 ```sh

@@ -4,6 +4,7 @@ created: "2024-09-10"
 path: "/resume-git"
 eyecatcher: "./eyecatcher.png"
 tags: ["職務経歴書", "GitHub Actions", "textlint"]
+category: "Tech"
 ---
 
 ## 目次

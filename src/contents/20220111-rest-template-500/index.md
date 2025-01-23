@@ -4,6 +4,7 @@ created: "2022-01-11"
 path: "/rest-template-500"
 eyecatcher: "./eyecatcher.png"
 tags: ["Java", "Spring"]
+category: "Tech"
 ---
 
 ## 目次

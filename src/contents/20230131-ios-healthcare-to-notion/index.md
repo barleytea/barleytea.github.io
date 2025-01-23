@@ -4,6 +4,7 @@ created: "2023-01-31"
 path: "/ios-healthcare-to-notion"
 eyecatcher: "../../images/barleytea.png"
 tags: ["Health","Notion"]
+category: "Tech"
 ---
 
 ## 目次
