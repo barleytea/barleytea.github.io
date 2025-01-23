@@ -25,37 +25,32 @@ interface PostListProps {
 
 export const PostList: React.FC<PostListProps> = ({ posts }) => {
   return (
-    <div className="columns is-multiline">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => (
-        <div key={post.id} className="column is-one-third">
-          <Link to={post.frontmatter.path}>
-            <div className="card">
-              <div className="card-image">
-                <figure className="image">
-                  <GatsbyImage
-                    image={post.frontmatter.eyecatcher.childImageSharp.gatsbyImageData}
-                    alt={post.frontmatter.title}
-                  />
-                </figure>
-              </div>
-              <div className="card-content">
-                <div className="content">
-                  <h4>{post.frontmatter.title}</h4>
-                  <time dateTime={post.frontmatter.created}>
-                    {post.frontmatter.created}
-                  </time>
-                  <div className="tags">
-                    {post.frontmatter.tags.map((tag) => (
-                      <span key={tag} className="tag is-light">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+        <Link key={post.id} to={post.frontmatter.path} className="no-underline">
+          <article className="card h-full">
+            <div className="card-image aspect-video">
+              <GatsbyImage
+                image={post.frontmatter.eyecatcher.childImageSharp.gatsbyImageData}
+                alt={post.frontmatter.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="card-content">
+              <h4>{post.frontmatter.title}</h4>
+              <time dateTime={post.frontmatter.created}>
+                {post.frontmatter.created}
+              </time>
+              <div className="tags">
+                {post.frontmatter.tags.map((tag) => (
+                  <span key={tag} className="tag">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
-          </Link>
-        </div>
+          </article>
+        </Link>
       ))}
     </div>
   )
