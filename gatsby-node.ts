@@ -159,6 +159,7 @@ export const createPages = async ({ graphql, actions }: CreatePagesArgs) => {
   result.data.allMarkdownRemark.edges.forEach((edge: MarkdownEdge, index: number) => {
     const id = posts[index].id
     const path = posts[index].frontmatter?.path
+    const currentTags = posts[index].frontmatter?.tags || []
 
     if (!path) {
       throw new Error('Invalid path')
@@ -172,7 +173,7 @@ export const createPages = async ({ graphql, actions }: CreatePagesArgs) => {
         next: edge.next,
         prev: edge.previous,
         categories,
-        tags,
+        tags: currentTags,
       },
     })
   })

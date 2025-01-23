@@ -37,6 +37,7 @@ interface DetailPageData {
       frontmatter: {
         path: string | null
         title: string | null
+        tags: readonly (string | null)[] | null
         eyecatcher: {
           childImageSharp: {
             gatsbyImageData: IGatsbyImageData
@@ -51,13 +52,23 @@ const RootBlogList = ({
   data,
   pageContext,
 }: PageProps<DetailPageData, DetailPageContextWithCategories>) => {
-  console.log(pageContext)
+  console.log('Current page data:', data.markdownRemark)
+  console.log('Related posts:', data.tags.nodes)
 
   if (!data.markdownRemark) {
     throw new Error('MarkdownRemark shouled be provided')
   }
 
-  const postsRelatedToTag = data.tags.nodes
+  const currentTags = data.markdownRemark.frontmatter.tags || []
+  console.log('Current tags:', currentTags)
+  
+  const postsRelatedToTag = data.tags.nodes.filter(node => {
+    if (!node.frontmatter?.tags) return false
+    const hasMatchingTag = node.frontmatter.tags.some(tag => tag && currentTags.includes(tag))
+    console.log('Checking post:', node.frontmatter.title, 'tags:', node.frontmatter.tags, 'matches:', hasMatchingTag)
+    return hasMatchingTag
+  })
+  
   const displaySideMenu = postsRelatedToTag.length > 0
   const sideColumnClassName = displaySideMenu
     ? `invisible min-[480px]:visible`
@@ -86,7 +97,7 @@ const RootBlogList = ({
 export default RootBlogList
 
 export const details = graphql`
-  query DetailPage($id: String!, $tags: [String!]) {
+  query DetailPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -104,7 +115,7 @@ export const details = graphql`
       }
     }
     tags: allMarkdownRemark(
-      filter: { id: { ne: $id }, frontmatter: { tags: { in: $tags } } }
+      filter: { id: { ne: $id } }
       limit: 10
       sort: { frontmatter: { created: DESC } }
     ) {
@@ -112,6 +123,7 @@ export const details = graphql`
         frontmatter {
           path
           title
+          tags
           eyecatcher {
             childImageSharp {
               gatsbyImageData(width: 120, height: 90)
