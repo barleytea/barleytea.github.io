@@ -251,7 +251,7 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>;
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
-  graphqlTypegen?: Maybe<SiteGraphqlTypegen>;
+  graphqlTypegen?: Maybe<Scalars['Boolean']>;
   jsxRuntime?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
@@ -268,12 +268,6 @@ export type SiteBuildTimeArgs = {
   fromNow?: InputMaybe<Scalars['Boolean']>;
   difference?: InputMaybe<Scalars['String']>;
   locale?: InputMaybe<Scalars['String']>;
-};
-
-export type SiteGraphqlTypegen = {
-  typesOutputPath?: Maybe<Scalars['String']>;
-  documentSearchPaths?: Maybe<Array<Maybe<Scalars['String']>>>;
-  generateOnBuild?: Maybe<Scalars['Boolean']>;
 };
 
 export type SiteSiteMetadata = {
@@ -840,7 +834,7 @@ export type QuerySiteArgs = {
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
   port?: InputMaybe<IntQueryOperatorInput>;
   host?: InputMaybe<StringQueryOperatorInput>;
-  graphqlTypegen?: InputMaybe<SiteGraphqlTypegenFilterInput>;
+  graphqlTypegen?: InputMaybe<BooleanQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
@@ -1880,12 +1874,6 @@ export type SiteSiteMetadataFilterInput = {
   image?: InputMaybe<StringQueryOperatorInput>;
 };
 
-export type SiteGraphqlTypegenFilterInput = {
-  typesOutputPath?: InputMaybe<StringQueryOperatorInput>;
-  documentSearchPaths?: InputMaybe<StringQueryOperatorInput>;
-  generateOnBuild?: InputMaybe<BooleanQueryOperatorInput>;
-};
-
 export type SiteConnection = {
   totalCount: Scalars['Int'];
   edges: Array<SiteEdge>;
@@ -1936,7 +1924,7 @@ export type SiteFieldSelector = {
   siteMetadata?: InputMaybe<SiteSiteMetadataFieldSelector>;
   port?: InputMaybe<FieldSelectorEnum>;
   host?: InputMaybe<FieldSelectorEnum>;
-  graphqlTypegen?: InputMaybe<SiteGraphqlTypegenFieldSelector>;
+  graphqlTypegen?: InputMaybe<FieldSelectorEnum>;
   jsxRuntime?: InputMaybe<FieldSelectorEnum>;
   polyfill?: InputMaybe<FieldSelectorEnum>;
   pathPrefix?: InputMaybe<FieldSelectorEnum>;
@@ -1954,12 +1942,6 @@ export type SiteSiteMetadataFieldSelector = {
   siteUrl?: InputMaybe<FieldSelectorEnum>;
   twitterUserName?: InputMaybe<FieldSelectorEnum>;
   image?: InputMaybe<FieldSelectorEnum>;
-};
-
-export type SiteGraphqlTypegenFieldSelector = {
-  typesOutputPath?: InputMaybe<FieldSelectorEnum>;
-  documentSearchPaths?: InputMaybe<FieldSelectorEnum>;
-  generateOnBuild?: InputMaybe<FieldSelectorEnum>;
 };
 
 export type SiteGroupConnection = {
@@ -2008,7 +1990,7 @@ export type SiteFilterInput = {
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
   port?: InputMaybe<IntQueryOperatorInput>;
   host?: InputMaybe<StringQueryOperatorInput>;
-  graphqlTypegen?: InputMaybe<SiteGraphqlTypegenFilterInput>;
+  graphqlTypegen?: InputMaybe<BooleanQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
@@ -2024,7 +2006,7 @@ export type SiteSortInput = {
   siteMetadata?: InputMaybe<SiteSiteMetadataSortInput>;
   port?: InputMaybe<SortOrderEnum>;
   host?: InputMaybe<SortOrderEnum>;
-  graphqlTypegen?: InputMaybe<SiteGraphqlTypegenSortInput>;
+  graphqlTypegen?: InputMaybe<SortOrderEnum>;
   jsxRuntime?: InputMaybe<SortOrderEnum>;
   polyfill?: InputMaybe<SortOrderEnum>;
   pathPrefix?: InputMaybe<SortOrderEnum>;
@@ -2042,12 +2024,6 @@ export type SiteSiteMetadataSortInput = {
   siteUrl?: InputMaybe<SortOrderEnum>;
   twitterUserName?: InputMaybe<SortOrderEnum>;
   image?: InputMaybe<SortOrderEnum>;
-};
-
-export type SiteGraphqlTypegenSortInput = {
-  typesOutputPath?: InputMaybe<SortOrderEnum>;
-  documentSearchPaths?: InputMaybe<SortOrderEnum>;
-  generateOnBuild?: InputMaybe<SortOrderEnum>;
 };
 
 export type SiteFunctionConnection = {

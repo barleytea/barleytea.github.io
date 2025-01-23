@@ -9,10 +9,7 @@ const config: GatsbyConfig = {
     twitterUserName: `@barlog_tech`,
     image: '/images/barleytea.png',
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
-  graphqlTypegen: true,
+  graphqlTypegen: false, // GraphQL Codegen を一時的に無効化
   jsxRuntime: 'automatic',
   plugins: [
     'gatsby-plugin-postcss',
