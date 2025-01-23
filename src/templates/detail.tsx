@@ -6,7 +6,6 @@ import { MainColumn } from '../components/main-column'
 import { ContentsHeader } from '../components/contents-header'
 import { NextAndPrevious } from '../components/next-previous'
 import { SideColumn } from '../components/side-column'
-import { CategoryTabs } from '../components/category-tabs'
 import SEO from '../components/seo'
 import { getSrc } from 'gatsby-plugin-image'
 
@@ -67,10 +66,6 @@ const RootBlogList = ({
   return (
     <Layout>
       <div>
-        <CategoryTabs
-          categories={pageContext.categories}
-          currentCategory={data.markdownRemark.frontmatter?.category || null}
-        />
         <ContentsHeader
           markdownMeta={data.markdownRemark.frontmatter}
         ></ContentsHeader>
