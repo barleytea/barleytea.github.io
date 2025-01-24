@@ -55,12 +55,17 @@
     @apply my-6 text-2xl font-semibold border-l-4 border-[color:var(--primary-color)] pl-3;
   }
   .markdown h3 {
-    @apply my-4 text-xl font-semibold text-[color:var(--primary-color)];
+    @apply my-6 text-xl font-semibold text-[color:var(--primary-color)] border-b;
+    border-color: rgb(106 145 193 / 0.3);
   }
-  .markdown h4,
+  .markdown h4 {
+    @apply my-5 text-lg font-semibold pl-2 border-l-2;
+    border-color: rgb(106 145 193 / 0.5);
+  }
   .markdown h5,
   .markdown h6 {
-    @apply my-3 text-lg font-semibold;
+    @apply my-3 text-base font-semibold;
+    color: rgb(204 204 204 / 0.9);
   }
 
   @screen sm {
