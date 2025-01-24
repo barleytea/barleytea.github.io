@@ -132,8 +132,8 @@
     overflow: visible;
   }
 
-  svg {
-    @apply bg-[color:var(--text-color)];
+  .markdown .mermaid svg {
+    background-color: transparent !important;
   }
 
   /* Images */
