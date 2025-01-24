@@ -68,6 +68,7 @@ export const createSchemaCustomization = ({ actions }: CreateSchemaCustomization
       tags: [String]
       category: String
       eyecatcher: File @fileByRelativePath
+      draft: Boolean
     }
 
     type MarkdownRemark implements Node {
@@ -82,7 +83,10 @@ export const createPages = async ({ graphql, actions }: CreatePagesArgs) => {
   // Get all markdown posts
   const result: QueryResult = await graphql(`
     query CreatePages {
-      allMarkdownRemark(sort: { frontmatter: { created: DESC } }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { draft: { ne: true } } }
+        sort: { frontmatter: { created: DESC } }
+      ) {
         nodes {
           id
           frontmatter {

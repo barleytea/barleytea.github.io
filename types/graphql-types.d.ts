@@ -702,6 +702,7 @@ export type MarkdownRemarkFrontmatter = {
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   category?: Maybe<Scalars['String']>;
   eyecatcher?: Maybe<File>;
+  draft?: Maybe<Scalars['Boolean']>;
 };
 
 export type Query = {
@@ -1174,6 +1175,7 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   tags?: InputMaybe<StringQueryOperatorInput>;
   category?: InputMaybe<StringQueryOperatorInput>;
   eyecatcher?: InputMaybe<FileFilterInput>;
+  draft?: InputMaybe<BooleanQueryOperatorInput>;
 };
 
 export type FileFilterInput = {
@@ -1448,6 +1450,7 @@ export type MarkdownRemarkFrontmatterFieldSelector = {
   tags?: InputMaybe<FieldSelectorEnum>;
   category?: InputMaybe<FieldSelectorEnum>;
   eyecatcher?: InputMaybe<FileFieldSelector>;
+  draft?: InputMaybe<FieldSelectorEnum>;
 };
 
 export type MarkdownHeadingFieldSelector = {
@@ -1651,6 +1654,7 @@ export type MarkdownRemarkFrontmatterSortInput = {
   tags?: InputMaybe<SortOrderEnum>;
   category?: InputMaybe<SortOrderEnum>;
   eyecatcher?: InputMaybe<FileSortInput>;
+  draft?: InputMaybe<SortOrderEnum>;
 };
 
 export type MarkdownHeadingSortInput = {

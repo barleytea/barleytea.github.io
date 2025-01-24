@@ -115,7 +115,12 @@ export const details = graphql`
       }
     }
     tags: allMarkdownRemark(
-      filter: { id: { ne: $id } }
+      filter: { 
+        id: { ne: $id }
+        frontmatter: { 
+          draft: { ne: true }
+        }
+      }
       limit: 10
       sort: { frontmatter: { created: DESC } }
     ) {

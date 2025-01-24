@@ -64,7 +64,12 @@ export const query = graphql`
       sort: { frontmatter: { created: DESC } }
       limit: $limit
       skip: $skip
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: { 
+        frontmatter: { 
+          category: { eq: $category }
+          draft: { ne: true }
+        } 
+      }
     ) {
       nodes {
         id

@@ -5,6 +5,7 @@ path: "/ios-healthcare-to-notion"
 eyecatcher: "../../images/barleytea.png"
 tags: ["Health","Notion"]
 category: "Tech"
+draft: true
 ---
 
 ## 目次
