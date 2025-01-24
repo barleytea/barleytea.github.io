@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import { Layout } from '../components/layout'
 import { CardList } from '../components/card-list'
-import { CategoryTabs } from '../components/CategoryTabs'
+import { CategoryTabs } from '../components/category-tabs'
 import { Pagination } from '../components/pagination'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 

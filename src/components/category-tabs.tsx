@@ -1,38 +1,35 @@
+import React from 'react'
 import { Link } from 'gatsby'
-import { ComponentType } from 'react'
 
 interface CategoryTabsProps {
   categories: string[]
-  currentCategory: string | null
+  currentCategory: string
 }
 
-export const CategoryTabs: ComponentType<CategoryTabsProps> = ({
-  categories,
-  currentCategory,
-}) => {
+export const CategoryTabs: React.FC<CategoryTabsProps> = ({ categories, currentCategory }) => {
   return (
-    <div className="mb-8">
-      <ul className="flex flex-wrap border-b border-[color:var(--text-color)]">
-        <li className="mr-2">
+    <div className="mb-6">
+      <ul className="flex flex-nowrap overflow-x-auto scrollbar-hide py-2 px-2">
+        <li className="mx-2 flex-none">
           <Link
             to="/"
-            className={`inline-block rounded-t-lg p-4 ${
-              currentCategory === null
-                ? 'bg-[color:var(--primary-color)] text-[color:var(--text-color)]'
-                : 'hover:bg-[color:var(--primary-color)] hover:text-[color:var(--text-color)]'
+            className={`px-6 py-2 border rounded-full text-lg transition-all duration-300 whitespace-nowrap ${
+              currentCategory === ''
+                ? 'bg-[color:var(--primary-color)] border-[color:var(--primary-color)] text-white font-bold'
+                : 'border-gray-700 text-gray-400 bg-gray-800/30 hover:border-[color:var(--primary-color)] hover:text-[color:var(--primary-color)] hover:bg-gray-800/50'
             }`}
           >
             All
           </Link>
         </li>
         {categories.map((category) => (
-          <li key={category} className="mr-2">
+          <li key={category} className="mx-2 flex-none">
             <Link
               to={`/category/${category.toLowerCase()}`}
-              className={`inline-block rounded-t-lg p-4 ${
-                currentCategory === category
-                  ? 'bg-[color:var(--primary-color)] text-[color:var(--text-color)]'
-                  : 'hover:bg-[color:var(--primary-color)] hover:text-[color:var(--text-color)]'
+              className={`px-6 py-2 border rounded-full text-lg transition-all duration-300 whitespace-nowrap ${
+                category === currentCategory
+                  ? 'bg-[color:var(--primary-color)] border-[color:var(--primary-color)] text-white font-bold'
+                  : 'border-gray-700 text-gray-400 bg-gray-800/30 hover:border-[color:var(--primary-color)] hover:text-[color:var(--primary-color)] hover:bg-gray-800/50'
               }`}
             >
               {category}

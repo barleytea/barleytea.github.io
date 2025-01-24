@@ -3,7 +3,7 @@ import { graphql, PageProps } from 'gatsby'
 import { Layout } from '../components/layout'
 import { CardList } from '../components/card-list'
 import { Pagination } from '../components/pagination'
-import { CategoryTabs } from '../components/CategoryTabs'
+import { CategoryTabs } from '../components/category-tabs'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import SEO from '../components/seo'
 
