@@ -9,7 +9,7 @@ const config: GatsbyConfig = {
     twitterUserName: `@barlog_tech`,
     image: '/images/barleytea.png',
   },
-  graphqlTypegen: false, // GraphQL Codegen を一時的に無効化
+  graphqlTypegen: false,  // GraphQL Codegen を一時的に無効化
   jsxRuntime: 'automatic',
   plugins: [
     'gatsby-plugin-postcss',

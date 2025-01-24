@@ -23,6 +23,7 @@ export const Normal: Story = {
         created: '2023-10-02',
         path: 'sample001',
         tags: ['tag', 'tag2'],
+        category: 'tech',
         eyecatcher: {
           childImageSharp: {
             gatsbyImageData: {

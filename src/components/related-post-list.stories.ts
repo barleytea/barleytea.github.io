@@ -20,6 +20,7 @@ export const Normal: Story = {
         frontmatter: {
           path: 'sample001',
           title: 'sample001',
+          tags: ['tag1'],
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -36,6 +37,7 @@ export const Normal: Story = {
         frontmatter: {
           path: 'sample002',
           title: 'sample002',
+          tags: ['tag2'],
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {

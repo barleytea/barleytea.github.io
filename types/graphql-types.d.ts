@@ -2815,6 +2815,8 @@ export type MarkdownRemarkGroupConnectionGroupArgs = {
   field: MarkdownRemarkFieldSelector;
 };
 
+export type CardListFragment = { id: string, frontmatter?: { title?: string | null, created?: string | null, path?: string | null, tags?: Array<string | null> | null, category?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null };
+
 export type SiteMetaDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -2844,16 +2846,16 @@ export type PostsByTagQueryVariables = Exact<{
 }>;
 
 
-export type PostsByTagQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { path?: string | null, title?: string | null, created?: string | null, tags?: Array<string | null> | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+export type PostsByTagQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { path?: string | null, title?: string | null, created?: string | null, tags?: Array<string | null> | null, category?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
-export type RootPageQueryVariables = Exact<{
+export type PaginationQueryVariables = Exact<{
   skip: Scalars['Int'];
   limit: Scalars['Int'];
   category?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type RootPageQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { title?: string | null, created?: string | null, path?: string | null, tags?: Array<string | null> | null, category?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+export type PaginationQuery = { allMarkdownRemark: { nodes: Array<{ id: string, frontmatter?: { title?: string | null, created?: string | null, path?: string | null, tags?: Array<string | null> | null, category?: string | null, eyecatcher?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }>, pageInfo: { currentPage: number, hasNextPage: boolean, hasPreviousPage: boolean, itemCount: number, pageCount: number, perPage?: number | null, totalCount: number } } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 

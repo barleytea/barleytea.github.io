@@ -19,37 +19,15 @@ export const Normal: Story = {
     prev: {
       frontmatter: {
         title: 'Sample001',
-        created: '2023-10-02',
         path: 'sample001',
-        tags: [],
-        eyecatcher: {
-          childImageSharp: {
-            gatsbyImageData: {
-              width: 1,
-              height: 3,
-              layout: 'constrained',
-              images: {},
-            },
-          },
-        },
+        created: '2023-10-02'
       },
     },
     next: {
       frontmatter: {
         title: 'Sample003',
-        created: '2023-10-04',
         path: 'sample003',
-        tags: [],
-        eyecatcher: {
-          childImageSharp: {
-            gatsbyImageData: {
-              width: 1,
-              height: 3,
-              layout: 'constrained',
-              images: {},
-            },
-          },
-        },
+        created: '2023-10-04'
       },
     },
   },

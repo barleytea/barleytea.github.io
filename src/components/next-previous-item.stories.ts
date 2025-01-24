@@ -21,17 +21,6 @@ export const Left: Story = {
         title: 'Sample001',
         created: '2023-10-02',
         path: 'sample001',
-        tags: [],
-        eyecatcher: {
-          childImageSharp: {
-            gatsbyImageData: {
-              width: 1,
-              height: 3,
-              layout: 'constrained',
-              images: {},
-            },
-          },
-        },
       },
     },
     direction: 'left',
@@ -45,17 +34,6 @@ export const Right: Story = {
         title: 'Sample003',
         created: '2023-10-04',
         path: 'sample003',
-        tags: [],
-        eyecatcher: {
-          childImageSharp: {
-            gatsbyImageData: {
-              width: 1,
-              height: 3,
-              layout: 'constrained',
-              images: {},
-            },
-          },
-        },
       },
     },
     direction: 'right',
@@ -70,17 +48,6 @@ export const RightWithLongText: Story = {
           'LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle LongTitle',
         created: '2023-10-04',
         path: 'sample003',
-        tags: [],
-        eyecatcher: {
-          childImageSharp: {
-            gatsbyImageData: {
-              width: 1,
-              height: 3,
-              layout: 'constrained',
-              images: {},
-            },
-          },
-        },
       },
     },
     direction: 'right',
@@ -92,20 +59,9 @@ export const RightWithLongTextJapanese: Story = {
     post: {
       frontmatter: {
         title:
-          '長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル',
+          '長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル長いタイトル',
         created: '2023-10-04',
         path: 'sample003',
-        tags: [],
-        eyecatcher: {
-          childImageSharp: {
-            gatsbyImageData: {
-              width: 1,
-              height: 3,
-              layout: 'constrained',
-              images: {},
-            },
-          },
-        },
       },
     },
     direction: 'right',

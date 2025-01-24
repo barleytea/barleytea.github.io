@@ -24,6 +24,7 @@ export const Normal: Story = {
           created: '2023-10-02',
           path: 'sample001',
           tags: ['tag'],
+          category: 'tech',
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -43,6 +44,7 @@ export const Normal: Story = {
           created: '2023-10-03',
           path: 'sample001',
           tags: ['tag'],
+          category: 'tech',
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -62,6 +64,7 @@ export const Normal: Story = {
           created: '2023-10-04',
           path: 'sample003',
           tags: ['tag'],
+          category: 'tech',
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -81,6 +84,7 @@ export const Normal: Story = {
           created: '2023-10-05',
           path: 'sample004',
           tags: ['tag'],
+          category: 'tech',
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -100,6 +104,7 @@ export const Normal: Story = {
           created: '2023-10-06',
           path: 'sample005',
           tags: ['tag'],
+          category: 'tech',
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {
@@ -119,6 +124,7 @@ export const Normal: Story = {
           created: '2023-10-07',
           path: 'sample006',
           tags: ['tag'],
+          category: 'tech',
           eyecatcher: {
             childImageSharp: {
               gatsbyImageData: {

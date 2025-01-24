@@ -1,9 +1,19 @@
 import { ComponentType } from 'react'
 import { NextAndPreviousItem } from './next-previous-item'
 
+interface PostFrontmatter {
+  path: string | null
+  title: string | null
+  created: string | null
+}
+
+interface Post {
+  frontmatter: PostFrontmatter | null
+}
+
 interface NextAndPreviousEdges {
-  next: Queries.NextAndPreviousQuery['allMarkdownRemark']['edges'][number]['next']
-  prev: Queries.NextAndPreviousQuery['allMarkdownRemark']['edges'][number]['previous']
+  next: Post | null
+  prev: Post | null
 }
 
 export const NextAndPrevious: ComponentType<NextAndPreviousEdges> = ({

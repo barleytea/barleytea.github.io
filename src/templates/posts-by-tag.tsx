@@ -32,6 +32,7 @@ export const postsPaginationQuery = graphql`
           title
           created
           tags
+          category
           eyecatcher {
             childImageSharp {
               gatsbyImageData(width: 300, height: 300)

@@ -4,28 +4,10 @@ import { Layout } from '../components/layout'
 import { CardList } from '../components/card-list'
 import { Pagination } from '../components/pagination'
 import { CategoryTabs } from '../components/category-tabs'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
 import SEO from '../components/seo'
+import '../components/card-list'
 
-interface RootPageData {
-  allMarkdownRemark: {
-    nodes: Array<{
-      id: string
-      frontmatter: {
-        title: string
-        created: string
-        path: string
-        tags: string[]
-        category: string
-        eyecatcher: {
-          childImageSharp: {
-            gatsbyImageData: IGatsbyImageData
-          }
-        }
-      }
-    }>
-  }
-}
+type RootPageData = Queries.PaginationQuery
 
 interface PageContext {
   limit: number
@@ -59,7 +41,7 @@ const RootPage: React.FC<PageProps<RootPageData, PageContext>> = ({ data, pageCo
 export default RootPage
 
 export const query = graphql`
-  query RootPage($skip: Int!, $limit: Int!, $category: String) {
+  query Pagination($skip: Int!, $limit: Int!, $category: String) {
     allMarkdownRemark(
       sort: { frontmatter: { created: DESC } }
       limit: $limit
@@ -72,19 +54,16 @@ export const query = graphql`
       }
     ) {
       nodes {
-        id
-        frontmatter {
-          title
-          created
-          path
-          tags
-          category
-          eyecatcher {
-            childImageSharp {
-              gatsbyImageData(width: 296, height: 296, placeholder: BLURRED)
-            }
-          }
-        }
+        ...CardList
+      }
+      pageInfo {
+        currentPage
+        hasNextPage
+        hasPreviousPage
+        itemCount
+        pageCount
+        perPage
+        totalCount
       }
     }
   }

@@ -1,5 +1,5 @@
 import path from 'path'
-import { CreatePagesArgs, CreateSchemaCustomizationArgs } from 'gatsby'
+import type { CreatePagesArgs, CreateSchemaCustomizationArgs } from 'gatsby'
 
 export interface TagListContext {
   tag: string
@@ -7,16 +7,18 @@ export interface TagListContext {
 
 export interface DetailPageContext {
   next: {
-    frontmatter?: {
-      path?: string
-      title?: string
-    }
+    frontmatter: {
+      path: string | null
+      title: string | null
+      created: string | null
+    } | null
   } | null
   prev: {
-    frontmatter?: {
-      path?: string
-      title?: string
-    }
+    frontmatter: {
+      path: string | null
+      title: string | null
+      created: string | null
+    } | null
   } | null
   id: string
   tags: string[]
@@ -36,14 +38,16 @@ interface MarkdownEdge {
     frontmatter?: {
       path?: string
       title?: string
+      created?: string
     }
-  }
+  } | null
   previous: {
     frontmatter?: {
       path?: string
       title?: string
+      created?: string
     }
-  }
+  } | null
 }
 
 interface MarkdownRemark {
@@ -57,7 +61,7 @@ interface QueryResult {
   }
 }
 
-export const createSchemaCustomization = ({ actions }: CreateSchemaCustomizationArgs) => {
+const createSchemaCustomization = ({ actions }: CreateSchemaCustomizationArgs): void => {
   const { createTypes } = actions
 
   createTypes(`
@@ -77,12 +81,12 @@ export const createSchemaCustomization = ({ actions }: CreateSchemaCustomization
   `)
 }
 
-export const createPages = async ({ graphql, actions }: CreatePagesArgs) => {
+const createPages = async ({ graphql, actions }: CreatePagesArgs): Promise<void> => {
   const { createPage } = actions
 
   // Get all markdown posts
   const result: QueryResult = await graphql(`
-    query CreatePages {
+    query NextAndPrevious {
       allMarkdownRemark(
         filter: { frontmatter: { draft: { ne: true } } }
         sort: { frontmatter: { created: DESC } }
@@ -100,12 +104,14 @@ export const createPages = async ({ graphql, actions }: CreatePagesArgs) => {
             frontmatter {
               path
               title
+              created
             }
           }
           previous {
             frontmatter {
               path
               title
+              created
             }
           }
         }
@@ -216,3 +222,5 @@ export const createPages = async ({ graphql, actions }: CreatePagesArgs) => {
     })
   })
 }
+
+export { createPages, createSchemaCustomization }
