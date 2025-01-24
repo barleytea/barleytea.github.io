@@ -1,5 +1,5 @@
 ---
-title: "Go 並行処理超入門"
+title: "Go の並行処理に入門した"
 created: "2023-12-29"
 path: "/go-producer-consumer"
 eyecatcher: "./eyecatcher.png"
