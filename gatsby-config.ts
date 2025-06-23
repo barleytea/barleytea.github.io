@@ -64,16 +64,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-remark-mermaid`,
-            options: {
-              language: 'mermaid',
-              theme: 'dark',
-              mermaidConfig: {
-                theme: 'dark'
-              }
-            }
-          },
+
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
