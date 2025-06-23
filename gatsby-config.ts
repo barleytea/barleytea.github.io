@@ -161,12 +161,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-plugin-graphql-codegen',
-      options: {
-        fileName: `types/graphql-types.d.ts`,
-      },
-    },
+
   ],
 }
 
