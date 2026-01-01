@@ -7,11 +7,6 @@ tags: ["Notion", "Google Apps Script", "Google AppSheet"]
 category: "Tech"
 ---
 
-## 目次
-
-```toc
-```
-
 ## 課題
 
 蔵書を Notion のデータベースで管理していて、新しい書籍を購入するたびに手作業でぽちぽち入力していたが、以下の課題を感じていた。

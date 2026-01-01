@@ -6,6 +6,7 @@ import { MainColumn } from '../components/main-column'
 import { ContentsHeader } from '../components/contents-header'
 import { NextAndPrevious } from '../components/next-previous'
 import { SideColumn } from '../components/side-column'
+import { TagList } from '../components/tag-list'
 import SEO from '../components/seo'
 import { getSrc } from 'gatsby-plugin-image'
 
@@ -30,6 +31,10 @@ interface DetailPageData {
   markdownRemark: {
     id: string
     html: string
+    tableOfContents: string
+    wordCount: {
+      words: number
+    } | null
     frontmatter: DetailPageFrontmatter
   } | null
   tags: {
@@ -68,28 +73,42 @@ const RootBlogList = ({
     console.log('Checking post:', node.frontmatter.title, 'tags:', node.frontmatter.tags, 'matches:', hasMatchingTag)
     return hasMatchingTag
   })
-  
-  const displaySideMenu = postsRelatedToTag.length > 0
-  const sideColumnClassName = displaySideMenu
-    ? `invisible min-[480px]:visible`
-    : `invisible`
 
   return (
     <Layout>
-      <div>
+      <article className="zenn-article">
+        {/* ヘッダー（中央揃え） */}
         <ContentsHeader
           markdownMeta={data.markdownRemark.frontmatter}
-        ></ContentsHeader>
-        <div className="grid min-[480px]:gap-x-6 min-[480px]:grid-cols-[70%_30%] max-[480px]:grid-cols-[100%]" >
-          <MainColumn detailPage={data.markdownRemark} />
-          <aside className={sideColumnClassName}>
-            <SideColumn tags={postsRelatedToTag}></SideColumn>
+          wordCount={data.markdownRemark.wordCount?.words}
+        />
+        
+        {/* メインコンテンツエリア */}
+        <div className="zenn-content-wrapper">
+          {/* 記事本文 */}
+          <div className="zenn-main-content">
+            {/* タグ一覧 */}
+            <div className="mb-8">
+              <TagList tags={data.markdownRemark.frontmatter.tags} />
+            </div>
+            
+            <MainColumn detailPage={data.markdownRemark} />
+            
+            {/* 前後記事ナビゲーション */}
+            <section className="mt-12 pt-8 border-t border-gray-700/50">
+              <NextAndPrevious next={pageContext.next} prev={pageContext.prev} />
+            </section>
+          </div>
+          
+          {/* サイドバー */}
+          <aside className="zenn-sidebar hidden lg:block">
+            <SideColumn 
+              tags={postsRelatedToTag}
+              tableOfContents={data.markdownRemark.tableOfContents}
+            />
           </aside>
-          <section className="mt-4">
-            <NextAndPrevious next={pageContext.next} prev={pageContext.prev} />
-          </section>
         </div>
-      </div>
+      </article>
     </Layout>
   )
 }
@@ -101,6 +120,10 @@ export const details = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      tableOfContents(maxDepth: 3)
+      wordCount {
+        words
+      }
       frontmatter {
         path
         title

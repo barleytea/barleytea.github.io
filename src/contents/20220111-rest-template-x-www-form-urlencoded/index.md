@@ -7,11 +7,6 @@ tags: ["Java", "Spring"]
 category: "Tech"
 ---
 
-## 目次
-
-```toc
-```
-
 ## TL; DR
 
 request として渡す Object に`MultiValueMap`を使用すること。

@@ -22,18 +22,24 @@ export const RelatedPostListItem: ComponentType<RelatedPostListItemProps> = ({
     throw new Error('No image')
   }
 
+  const altText = `${post.frontmatter.title} thumbnail`
+
   return (
-    <li
-      key={post.frontmatter.path}
-      className="border-b-2 border-solid border-[color:var(--text-color)]"
-    >
-      <Link to={post.frontmatter.path}>
-        <div className="flex h-full text-[color:var(--text-color)] hover:bg-[color:var(--text-color)] hover:text-[color:var(--base-color)]">
-          <GatsbyImage image={image} alt="thumbnail" className="shrink-0" />
-          <div className="w-full px-2 py-1">
-            <span className="break-all">{post.frontmatter.title}</span>
-          </div>
+    <li className="border-b border-gray-700 last:border-b-0">
+      <Link
+        to={post.frontmatter.path}
+        className="group flex items-center gap-3 p-2 transition-all duration-300 hover:bg-gray-800/50"
+      >
+        <div className="shrink-0 overflow-hidden rounded-lg">
+          <GatsbyImage
+            image={image}
+            alt={altText}
+            className="transition-transform duration-300 group-hover:scale-105"
+          />
         </div>
+        <span className="line-clamp-2 text-sm text-[color:var(--text-color)] transition-colors duration-300 group-hover:text-[color:var(--primary-color)]">
+          {post.frontmatter.title}
+        </span>
       </Link>
     </li>
   )

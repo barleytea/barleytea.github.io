@@ -5,6 +5,9 @@ import { graphql } from 'gatsby'
 export const query = graphql`
   fragment CardList on MarkdownRemark {
     id
+    wordCount {
+      words
+    }
     frontmatter {
       title
       created

@@ -7,11 +7,6 @@ tags: ["MacOS", "dotfiles"]
 category: "Tech"
 ---
 
-## 目次
-
-```toc
-```
-
 ## Rosetta 2
 
 ```bash

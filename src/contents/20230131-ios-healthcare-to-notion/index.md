@@ -8,11 +8,6 @@ category: "Tech"
 draft: true
 ---
 
-## 目次
-
-```toc
-```
-
 ## TL; DR
 
 iOS のヘルスケアアプリに溜まっていく体重等のデータを Notion データベースと同期したい。

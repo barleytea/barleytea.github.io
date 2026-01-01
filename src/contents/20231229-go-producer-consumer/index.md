@@ -7,11 +7,6 @@ tags: ["Go", "並行処理"]
 category: "Tech"
 ---
 
-## 目次
-
-```toc
-```
-
 Go で並行処理のサンプル実装を作ったのでメモ
 ソースコード全体は[ここ](https://github.com/barleytea/go_sandbox/blob/main/producer_consumer/main.go)
 

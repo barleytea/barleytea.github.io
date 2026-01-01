@@ -7,11 +7,6 @@ tags: ["Java"]
 category: "Tech"
 ---
 
-## 目次
-
-```toc
-```
-
 ## TL; DR
 
 とりあえず成果物
